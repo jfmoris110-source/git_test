@@ -4,7 +4,7 @@
   "description": "note dump",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Running tests and linting...\" && lint-staged"
+    "test": "echo \"Running tests and linting...\"&& git add . && lint-staged"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
