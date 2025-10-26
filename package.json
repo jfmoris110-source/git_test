@@ -1,0 +1,24 @@
+{
+  "name": "org_index",
+  "version": "1.0.0",
+  "description": "note dump",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Running tests and linting...\" && lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.css": "stylelint --fix",
+    "*.html": "html-eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "author": "jeff",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6"
+  }
+}
