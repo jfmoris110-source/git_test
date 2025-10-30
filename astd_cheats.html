@@ -1,0 +1,2191 @@
+
+<!-- // yarn packages 2025   - after idx
+((.{64,70})(\w?)(\s{1}))-->
+<script>
+	window.onbeforeunload = function(){
+		"save notes before leaving page"
+		return;
+	}
+</script>
+<style>
+    a{
+display: inline;        
+    }
+</style>
+<style type="text/css">
+  h3{
+    margin: 0px;
+  }
+  #but_div{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+  }
+ #notesw{   }
+ #fixy{    
+  display: none;  
+  width: 50%; 
+  position:fixed;
+  top: 24px;
+  right: 0px;
+   background-color: lightgoldenrodyellow;
+ }
+  /*#content{   background-color: white; opacity: 1; overflow: scroll; 
+ color:black;  }*/
+  #edit_content{     }
+/*// sticky*/
+.stk{
+   position:sticky;
+   top: 0px;
+   right: 0px;
+   background-color: navajowhite;
+   width: 50%;
+   }  
+</style>
+regex:    
+<!-- (<span class="c1">)((.{64,70})((\w?)|(</span>)?)(\s{1}))
+->  \1\2\n#_    == newliner
+ -->
+<body> 
+<div id="but_div"> 
+<button  onclick="Clickall()"  id="but1">all &#9658; </button> 
+<button id="notesw">notes</button>  
+<button id="edit_content">save </button>
+<div  id="fixy"><div id ="content"contenteditable="true">
+storg0 - Notes:
+</div></div></div>
+<link rel="stylesheet" type="text/css" href="./astd_cheats.css">
+<details><summary>index with sub-categories</summary> 
+<br>//// yarn
+
+<br><br>//// mySOL
+<a href="#connectdisconnect">Connect/Disconnect___</a>
+<a href="#loading-data-from-file">Loading Data From File___</a>
+<a href="#modify-tables">Modify Tables___</a>
+<a href="#user-management">User Management___</a>
+<a href="#reset-root-password">Reset Root Password___</a>
+
+<br><br>//// npm
+<a href="#top-npm-commands">Top NPM commands___</a>
+
+<br><br>//// linux
+<a href="#system-information">System Information___</a>
+<a href="#network-information">Network Information___</a>
+<a href="#process-management">Process Management___</a>
+<a href="#file-management">File Management___</a>
+<a href="#user-management1">User Management___</a>
+<a href="#ssh">SSH___</a>
+
+<br><br>//// bash scripting
+<a href="#basics">Basic___</a>
+<a href="#conditionals">Conditional___</a>
+<a href="#switch-statements">Switch Statement___</a>
+<a href="#loop-statements">Loop Statement___</a>
+<a href="#functions">Function___</a>
+<a href="#finding-files">Finding file___</a>
+<a href="#extract-sort-and-filter-data">Extract, sort and filter dat___</a>
+
+<br><br>//// css
+<a href="#css-selectors">CSS Selectors___</a>
+<a href="#basic-selectors">Basic Selectors___</a>
+<a href="#combinators">Combinators___</a>
+<a href="#pseudo-elements">Pseudo-elements___</a>
+<a href="#pseudo-classes">Pseudo-classes___</a>
+<a href="#animation">Animation___</a>
+<a href="#sub-properties">Sub-properties___</a>
+
+<br><br>//// flex-box
+<a href="#create-a-flex-container">Create a Flex Container___</a>
+<a href="#row-layout">Row layout___</a>
+<a href="#column-layout">Column layout___</a>
+<a href="#align-layout-to-top">Align Layout to Top___</a>
+<a href="#align-layout-to-left">Align Layout to Left___</a>
+<a href="#align-layout-to-right">Align Layout to Right___</a>
+<a href="#center-everything">Center everything___</a>
+<a href="#grow-a-flex-item-x-times-as-big-as-other-flex-items">Grow a flex item X times as big as other flex items___</a>
+<a href="#wrap-flex-items-into-multiple-rows">Wrap flex items into multiple rows___</a>
+<a href="#wrap-flex-items-into-multiple-columns">Wrap flex items into multiple columns___</a>
+<a href="#remove-the-space-from-wrapped-rows-or-columns">Remove the space from wrapped rows or columns___</a>
+
+<br><br>//// es6
+<a href="#es6-new-features">ES6 New Features:___</a>
+<a href="#arrows">Arrows___</a>
+<a href="#enhanced-object-literals">Enhanced Object Literals___</a>
+<a href="#template-strings">Template Strings___</a>
+<a href="#let--const">Let + Const___</a>
+<a href="#iterators--forof">Iterators + For..Of___</a>
+<a href="#generators">Generators___</a>
+<a href="#unicode">Unicode___</a>
+<a href="#modules">Modules___</a>
+<a href="#exporting-in-commonjs">Exporting in CommonJS___</a>
+<a href="#exporting-in-es6">Exporting in ES6___</a>
+
+<br><br>//// git
+<a href="#basic">Basic___</a>
+<a href="#refactor-filenames">Refactor filenames___</a>
+<a href="#commits">Commits___</a>
+<a href="#stash">Stash___</a>
+<a href="#manage-branches">Manage Branches___</a>
+<a href="#merging-a-finished-feature-branch">Merging a finished feature branch___</a>
+<a href="#create-a-release-branch">Create a release branch___</a>
+<a href="#finishing-a-release-branch">Finishing a release branch___</a>
+<a href="#creating-a-hotfix-branch">Creating a hotfix branch___</a>
+<a href="#finishing-a-hotfix-branch">Finishing a hotfix branch___</a>
+
+<br><br>//// node
+<a href="#bootstrap-angular-application">Bootstrap Angular application___</a>
+<a href="#modules">Modules___</a>
+<a href="#filters">Filters___</a>
+<a href="#options">Options___</a>
+<a href="#controllers">Controllers___</a>
+<a href="#services">Services___</a>
+<a href="#directives">Directives___</a>
+<a href="#built-in-directives">Built-in Directives___</a>
+<a href="#routes">Routes___</a>
+<a href="#register-services">Register Services___</a>
+<a href="#utility-functions">Utility Functions___</a>
+
+<br><br>//// sass
+<a href="#install">Instal___</a>
+<a href="#variables">Variable___</a>
+<a href="#nesting">Nestin___</a>
+<a href="#mixins">Mixin___</a>
+<a href="#extendinheritance">Extend/Inheritanc___</a>
+<a href="#operators">Operator___</a>
+
+<br><br>//// restful apis
+<a href="#best-practices-in-designing-restful-apis">Best Practices in Designing RESTful APIs___</a>
+<a href="#require-versioning-in-accepts-header">Require versioning in Accepts header___</a>
+<a href="#accept-serialized-json-in-request-bodies">Accept serialized JSON in request bodies___</a>
+<a href="#use-consistent-path-formats">Use consistent path formats___</a>
+<a href="#resource-names">Resource names___</a>
+<a href="#actions">Actions___</a>
+<a href="#downcase-paths-and-attributes">Downcase paths and attributes___</a>
+<a href="#support-non-id-dereferencing-for-convenience">Support non-id dereferencing for convenience___</a>
+<a href="#minimize-path-nesting">Minimize path nesting___</a>
+<a href="#responses">Responses___</a>
+<a href="#return-appropriate-status-codes">Return appropriate status codes___</a>
+<a href="#provide-full-resources-where-available">Provide full resources where available___</a>
+<a href="#provide-resource-uuids">Provide resource (UU)IDs___</a>
+<a href="#provide-standard-timestamps">Provide standard timestamps___</a>
+<a href="#use-utc-times-formatted-in-iso8601">Use UTC times formatted in ISO8601___</a>
+<a href="#nest-foreign-key-relations">Nest foreign key relations___</a>
+<a href="#generate-structured-errors">Generate structured errors___</a>
+<a href="#show-rate-limit-status">Show rate limit status___</a>
+<a href="#keep-json-minified-in-all-responses">Keep JSON minified in all responses___</a>
+<a href="#artifacts">Artifacts___</a>
+
+<br><br>//// react
+<a href="#react-on-es6">React on ES6+___</a>
+<a href="#lifecycle-methods">Lifecycle Methods___</a>
+<a href="#basic-class">Basic Class___</a>
+<a href="#initial-states">Initial States___</a>
+<a href="#component-lifecycle">Component Lifecycle___</a>
+<a href="#lists">Lists___</a>
+<a href="#reference">Reference___</a>
+</details><details><summary>
+//// links to more cheats & aids</summary> <pre>
+aids?:  emmet, vite, ts compile, github, SO, ai copilot
+   - jest, 
+ideas: skipAI , pomodoro w/rethink,E & rest 2hrs, 
+   rubber ducking, codebase analys tactics, 
+type tutor, git kata
+web: 
+
+## sublime Must have packages
+`A file icon, BracketHighlighter, Color Highlighter, Comment-Snippets, 
+DevDocs, EditorConfig, Emmet, File Rename, Git, Git blame, GitGutter, 
+HTML-CSS-JS Prettify, JavaScript Completions, JavaScript Patterns, 
+JavaScript Snippets, LESS, Nodejs, Package Control, Pretty JSON, 
+SideBarEnhancements, SublimeLinter, SublimeLinter-contrib-eslint, 
+Terminal, Termius, auto save`
+
+<a href="https://karloespiritu.github.io/cheatsheets/es6/">most of these from: karloespiritu</a>
+<a href="https://www.google.com/search?q=must+have+packages+and+tools+for+web+dev+2025+&num=10&client=ubuntu-chr">must+have+packages+and+tools+for+web+dev+2025</a><a href="https://www.google.com/search?q=npm+package+for+code+commenting%2C+codebase+learning&oq=npm+package++for+code+commenting%2C+codebase+learning&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRigAdIBCTI5NjIzajBqN6gCALACAA&client=ubuntu-chr&sourceid=chrome&ie=UTF-8">npm+package+for+code+commenting%2C+codebase+learning</a>
+<a href=""></a><a href=""></a>
+<br>local:<a href=""></a><a href=""></a><a href=""></a><a href=""></a>
+</pre></details>
+<details><summary>//// yarn packages 2025</summary>
+<pre>
+AI Overview
+While Yarn continues to be a relevant package manager, especially for 
+existing projects and larger teams, other options like pnpm are recommended 
+for new, modern, and complex projects. There is no single list of 
+"must-have" packages for all Yarn users, as the necessary packages 
+depend on the specific project and use case. However, some essential 
+categories and commonly used packages are frequently utilized in modern 
+web development. 
+For a modern approach, many developers are moving toward pnpm due to 
+its superior performance and disk space optimization. 
+General utility and development packages
+
+TypeScript:
+ A statically typed superset of JavaScript that compiles to 
+plain JavaScript. Essential for large applications for writing more 
+robust, maintainable code with fewer errors.
+bash
+yarn add typescript
+yarn add --dev @types/node
+
+ESLint:
+ A popular linter for JavaScript and TypeScript that helps 
+enforce code quality and consistency by identifying and reporting on 
+patterns in your code.
+bash
+yarn add --dev eslint
+
+Prettier:
+ An opinionated code formatter that integrates with ESLint to 
+automatically format your code for readability and consistency.
+bash
+yarn add --dev prettier
+
+Nodemon:
+ A tool that automatically restarts your Node.js application 
+when it detects file changes in the directory, ideal for development.
+
+bash
+yarn add --dev nodemon
+
+Chalk:
+ A library for adding color and styling to your terminal output, 
+improving the readability of logs and console messages during development.
+
+bash
+yarn add chalk
+ 
+Frameworks and libraries
+
+React:
+ A foundational library for building user interfaces, which uses 
+a component-based architecture for building scalable and interactive 
+applications.
+bash
+yarn create react-app my-app
+
+Next.js:
+ A powerful React framework for production-ready applications, 
+featuring server-side rendering, static site generation, and optimized 
+performance.
+bash
+yarn create next-app my-app
+
+Vite:
+ A fast, modern build tool that offers a significantly quicker 
+development experience compared to other bundlers, making it a popular 
+choice for new projects.
+bash
+yarn create vite
+
+Express:
+ A minimal and flexible Node.js web application framework that 
+provides a robust set of features for web and mobile applications.
+
+bash
+yarn add express
+
+Zod:
+ A TypeScript-first schema declaration and validation library, 
+primarily used for data validation and ensuring data integrity.
+bash
+yarn add zod
+ 
+State management
+
+Zustand:
+ A small, fast, and scalable state management solution for 
+React, known for its simplicity and unopinionated nature.
+bash
+yarn add zustand
+
+TanStack Query (formerly React Query):
+ A library for fetching, caching, 
+and updating asynchronous data in your React applications.
+bash
+yarn add @tanstack/react-query
+
+Redux Toolkit:
+ The official, opinionated, batteries-included toolset 
+for efficient Redux development, simplifying state management logic.
+
+bash
+yarn add @reduxjs/toolkit react-redux
+ 
+Testing packages
+
+Vitest:
+ A blazing-fast, Vite-native unit test framework designed for 
+modern web development, offering excellent performance and a streamlined 
+setup.
+bash
+yarn add --dev vitest
+
+Jest:
+ A popular testing framework for JavaScript, often used for unit 
+and integration testing.
+bash
+yarn add --dev jest
+
+React Testing Library:
+ A testing utility for React that helps test UI 
+components in a user-centric way.
+bash
+yarn add --dev @testing-library/react
+
+Cypress:
+ An end-to-end testing framework that makes it easy to write 
+and run automated tests for web applications.
+bash
+yarn add --dev cypress
+ 
+Headless UI and styling 
+
+Tailwind CSS:
+ A utility-first CSS framework that allows for rapid UI 
+development without leaving your HTML.
+bash
+yarn add --dev tailwindcss
+
+Headless UI:
+ A set of completely unstyled, accessible UI components for 
+React and Vue, giving you full control over styling.
+bash
+yarn add @headlessui/react
+
+Radix UI:
+ An open-source, accessible, and unstyled component library 
+for React, enabling the creation of high-quality design systems.
+
+bash
+yarn add @radix-ui/react-toast
+ 
+Choosing the right packages
+
+The best packages for your project depend on several factors:
+
+
+Project type:
+ The necessary packages differ significantly for a small 
+static website versus a large-scale enterprise application.
+
+Framework:
+ The tools you use will depend on whether you are building 
+with React, Next.js, Node.js, or another framework.
+
+Developer preference:
+ Many packages offer similar functionality, and 
+personal or team preference often influences the choice between them 
+(e.g., Jest vs. Vitest).	
+</pre> </details>
+//// yarn
+<pre class="highlight">
+<a href="https://classic.yarnpkg.com/en/docs/cli/run">yarnpkg.com/docs</a>
+<code><span class="c"># Add package to 'dependencies'</span>
+<span class="nv">$ </span>yarn add &lt;package&gt;
+<span class="c"># Add package to 'devDependencies'</span>
+<span class="nv">$ </span>yarn add <span class="nt">-D</span> &lt;package&gt;
+<span class="c"># Add packages as exact versions</span>
+<span class="nv">$ </span>yarn add <span class="nt">-E</span> &lt;package&gt;
+<span class="c"># Install packages globally on your operating system</span>
+<span class="nv">$ </span>yarn global add &lt;package&gt;
+<span class="c"># Removes the package from all types of dependencies</span>
+<span class="nv">$ </span>yarn remove &lt;package&gt;
+<span class="c"># List installed packages</span>
+<span class="nv">$ </span>yarn list
+<span class="c"># List top-level installed packages</span>
+<span class="nv">$ </span>yarn list <span class="nt">--depth</span><span class="o">=</span>0
+<span class="c"># List installed top-level global packages</span>
+<span class="nv">$ </span>yarn global list <span class="nt">--depth</span><span class="o">=</span>0
+<span class="c"># List packages with filter string and depth level</span>
+<span class="nv">$ </span>yarn list <span class="nt">--pattern</span> <span class="s2">"gulp|grunt"</span> <span class="nt">--depth</span><span class="o">=</span>1
+<span class="c"># Cleans and removes unnecessary files from package dependencies.</span>
+<span class="nv">$ </span>yarn autoclean
+<span class="c"># Checks for outdated package dependencies</span>
+<span class="nv">$ </span>yarn outdated
+<span class="c"># Show information about why a package is installed.</span>
+<span class="nv">$ </span>yarn why &lt;query&gt;
+<span class="nv">$ </span>yarn why jest
+<span class="c"># Running this command will clear the global cache. It will be</span>
+<span class="c"># populated again the next time yarn or yarn install is run.</span>
+<span class="c"># Additionally, you can specify one or more packages that you</span>
+<span class="c"># want to clean.</span>
+<span class="nv">$ </span>yarn cache clean
+</code>
+//// mySOL
+<div class="content container">
+      <div class="page">
+  <h3 class="page-title">MySql</h3>
+  <h3 id="connectdisconnect">Connect/Disconnect</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-u</span> &lt;user&gt; <span class="nt">-h</span> &lt;host&gt; <span class="nt">-p</span>&lt;passwd&gt;
+</code></pre></div></div>
+<h3 id="loading-data-from-file">Loading Data From File</h3>
+<pre><code class="language-mysql">LOAD DATA INFILE '/temp/mydata.txt' INTO TABLE table1
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\'
+</code></pre>
+<h3 id="modify-tables">Modify Tables</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE TABLE table (field1 type1, field2 type2, ..., PRIMARY KEY (field1, field2))
+CREATE TABLE new_tbl_name LIKE tbl_name
+  [SELECT ... FROM tbl_name ...]
+ALTER TABLE table ADD new_name_field1 type1 AFTER another_field
+</code></pre></div></div>
+<h3 id="user-management">User Management</h3>
+<pre><code class="language-mysql">CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+</code></pre>
+<pre><code class="language-mysql">GRANT ALL PRIVILEGES ON [database name].[table name] TO 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, DELETE ON [database name].[table name] TO 'user'@'localhost' IDENTIFIED BY 'password';
+REVOKE ALL PRIVILEGES ON [database name].[table name] FROM 'user'@'host'; -- one permission only
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'user'@'host'; -- all permissions
+</code></pre>
+<pre><code class="language-mysql">SET PASSWORD FOR 'user'@'host' = PASSWORD('new_pass')
+</code></pre>
+<h3 id="reset-root-password">Reset Root Password</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>/etc/init.d/mysql stop
+<span class="nv">$ </span>mysqld_safe <span class="nt">--skip-grant-tables</span> &amp;
+<span class="nv">$ </span>mysql <span class="c"># on another terminal</span>
+mysql&gt; UPDATE mysql.user SET <span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span><span class="s1">'newpasswrd'</span><span class="o">)</span> WHERE <span class="nv">user</span><span class="o">=</span><span class="s1">'root'</span><span class="p">;</span>
+<span class="c">## Kill mysqld_safe from the terminal, using Control + \</span>
+<span class="nv">$ </span>/etc/init.d/mysql start
+</code></pre></div></div></div></div>
+</pre>
+//// npm
+<div class="content container">
+      <div class="page">
+  <h3 class="page-title">NPM</h3>
+  <h3 id="top-npm-commands">Top NPM commands</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">npm init</code> - displays a simple wizard to help you create and define your new project</li>
+  <li><code class="language-plaintext highlighter-rouge">npm install module_name</code>: install a module;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm install -g module_name</code>: install a global module;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm install module_name --save</code>: install a module and add it into the <code class="language-plaintext highlighter-rouge">package.json</code> file, inside dependencies;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm install module_name --save-dev</code> - install a module and add it into the <code class="language-plaintext highlighter-rouge">package.json</code> file, inside devDependencies;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm list</code> - lists all the modules installed on the project;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm list -g</code> - lists all the installed global modules</li>
+  <li><code class="language-plaintext highlighter-rouge">npm remove module_name</code> - uninstall a module from the project;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm remove -g module_name</code> - uninstall a global module;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm remove module_name --save</code> - uninstall a module from the project and also remove it from the attribute dependencies</li>
+  <li><code class="language-plaintext highlighter-rouge">npm remove module_name --save-dev</code> - uninstall a module from the project and also remove it from the attribute devDependencies;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm update module_name</code> - updates the module version</li>
+  <li><code class="language-plaintext highlighter-rouge">npm update -g module_name</code> - updates the a global module version</li>
+  <li><code class="language-plaintext highlighter-rouge">npm -v</code> - displays the npm current version;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm adduser username</code> - creates an account to npmjs.org2;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm whoami</code> - displays details of your public npm’s profile (you must create an account using the previous command;</li>
+  <li><code class="language-plaintext highlighter-rouge">npm publish</code> - publishes a module into npmjs.org (it’s necessary to have an active account first);</li>
+</ul>
+</div></div>
+//// linux
+<div class="page">
+  <h3 class="page-title">Linux/Unix</h3>
+  <p>A list of useful commands for administering Linux/UNIX servers</p>
+<h3 id="system-information">System Information</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check system version</span>
+<span class="nv">$ </span>lsb_release <span class="nt">-a</span>  // Ubuntu
+<span class="c"># Check disk usage</span>
+<span class="nv">$ </span><span class="nb">df</span> <span class="nt">-h</span>
+<span class="c"># Displays processor activity of your system and displays tasks managed by kernel in real time</span>
+<span class="nv">$ </span>top
+<span class="c"># Outputs operating system, hostname, kernel version, date and timp, and processor.</span>
+<span class="nv">$ </span><span class="nb">uname</span> <span class="nt">-a</span>
+<span class="c"># List all system bootup messages to `stdout`</span>
+<span class="nv">$ </span>dmesg
+<span class="c"># Display the system hostname</span>
+<span class="nv">$ </span><span class="nb">hostname</span>
+<span class="c"># Display system uptime</span>
+<span class="nv">$ </span><span class="nb">uptime</span>
+<span class="c"># Show who is logged on and what they are doing</span>
+<span class="nv">$ </span>w
+<span class="c"># Reboot system</span>
+<span class="nv">$ </span>shutdown <span class="nt">-r</span> now
+</code></pre></div></div>
+<h3 id="network-information">Network Information</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check active network interfaces</span>
+<span class="nv">$ </span>ifconfig
+<span class="c"># Check all network interfaces</span>
+<span class="nv">$ </span>ifconfig <span class="nt">-a</span>
+<span class="c"># Disable an interface</span>
+<span class="nv">$ </span>ifconfig eth0 down
+<span class="c"># Enable an interface</span>
+<span class="nv">$ </span>ifconfig eth0 up
+<span class="c"># Assign IP Address to an Interface</span>
+<span class="nv">$ </span>ifconfig eth0 192.168.1.12
+<span class="c"># Change Subnet Mask of Interface eth0</span>
+<span class="nv">$ </span>ifconfig eth0 netmask 255.255.255.
+<span class="c"># Change Broadcast Address of Interface eth0</span>
+<span class="nv">$ </span>ifconfig eth0 broadcast 192.168.1.255
+<span class="c"># List All Network Ports</span>
+<span class="nv">$ </span>nestat <span class="nt">-a</span>
+<span class="c"># List All TCP Ports</span>
+<span class="nv">$ </span>nestat <span class="nt">-at</span>
+<span class="c"># List All Used TCP Ports</span>
+<span class="nv">$ </span>netstat <span class="nt">-ntlp</span> | <span class="nb">grep </span>LISTEN
+<span class="c"># Display name server information for domain by querying DNS.</span>
+<span class="nv">$ </span>nslookup karlespiritu.com
+</code></pre></div></div>
+<h3 id="process-management">Process Management</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># End a process</span>
+<span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-9</span> 1666
+<span class="c"># Force kill process by name</span>
+<span class="nv">$ </span>killall <span class="nt">-9</span> httpd
+<span class="c"># Find process ID of a running program</span>
+<span class="nv">$ </span>pidof httpd
+<span class="c"># List process in tree format</span>
+<span class="nv">$ </span>pstree
+<span class="c"># Locate the binary, source, and manual page files for a command.</span>
+<span class="nv">$ </span>whereis nginx
+</code></pre></div></div>
+<h3 id="file-management">File Management</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Count lines of a file</span>
+<span class="nv">$ </span><span class="nb">wc</span> <span class="nt">-l</span> /etc/passwd
+<span class="c"># Output the first part of files.</span>
+<span class="nv">$ </span><span class="nb">head</span> <span class="nt">-10</span> access_log
+<span class="c"># Show last part of a file</span>
+<span class="nv">$ </span><span class="nb">tail</span> <span class="nt">-2</span> httpd.log
+<span class="c"># Display all files that are currently open</span>
+<span class="nv">$ </span>lsof
+<span class="c"># Print the strings of printable characters of a file</span>
+<span class="nv">$ </span>strings my_script
+<span class="c"># Show file status</span>
+<span class="nv">$ </span><span class="nb">stat </span>access.log
+<span class="nv">$ </span>Display contents of file with line numbers
+<span class="nv">$ </span><span class="nb">nl </span>my_script.rb
+<span class="c"># Create symbolic link between files</span>
+<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> target.txt symlink.txt
+<span class="c"># List files ordered by modified time</span>
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-ltr</span>
+<span class="c"># To get the summary of a grand total disk usage size of a directory</span>
+<span class="nv">$ </span><span class="nb">du</span> <span class="nt">-sh</span> /var/www/mysite
+<span class="c"># List all files that are &gt; 20MB</span>
+<span class="nv">$ </span>find / <span class="nt">-type</span> f <span class="nt">-size</span> +10M <span class="nt">-exec</span> <span class="nb">ls</span> <span class="nt">-lh</span> <span class="o">{}</span> <span class="se">\;</span> | <span class="nb">awk</span> <span class="s1">'{ print $NF ": " $5 }'</span>
+<span class="c"># Find the biggest files (but not directories) in current directory</span>
+<span class="nv">$ </span> find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">du</span> <span class="nt">-Sh</span> <span class="o">{}</span> + | <span class="nb">sort</span> <span class="nt">-rh</span> | <span class="nb">head</span> <span class="nt">-n</span> 15
+<span class="c"># COMPRESS</span>
+<span class="c"># Compress files &amp; folders</span>
+<span class="nv">$ </span><span class="nb">tar </span>czvf archive.tgz ~/myfolder
+<span class="c"># Compress files and exclude specific directory</span>
+<span class="nv">$ </span><span class="nb">tar </span>czvf target.tgz <span class="nt">--exclude</span><span class="o">=</span><span class="s1">'dir1'</span> <span class="nt">--exclude</span><span class="o">=</span><span class="s1">'&lt;dir2&gt;'</span> /path_of_dr/to/backup
+<span class="c"># Extract tar archive</span>
+<span class="nv">$ </span><span class="nb">tar </span>xzvf archive.tgz
+<span class="c"># CUT</span>
+<span class="c"># Display only specific column using a delimiter</span>
+<span class="nv">$ </span><span class="nb">cut</span> <span class="nt">-f</span> 1 <span class="nt">-d</span> <span class="s1">':'</span> /etc/passwd
+<span class="c"># Display specific fields with a specified delimeter and output using custom output delimeter</span>
+<span class="nv">$ </span><span class="nb">cut</span> <span class="nt">-f</span> 1,3 <span class="nt">-d</span> <span class="s1">':'</span> <span class="nt">--output-delimiter</span><span class="o">=</span><span class="s1">' '</span> /etc/passwd
+<span class="c"># SORTING</span>
+<span class="c"># Sort a file in ascending order</span>
+<span class="nv">$ </span><span class="nb">sort </span>names.md
+<span class="c"># Sort a file in descending order</span>
+<span class="nv">$ </span><span class="nb">sort</span> <span class="nt">-r</span> names.md
+<span class="c"># Sort password file by 4th field</span>
+<span class="nv">$ </span><span class="nb">sort</span> <span class="nt">-t</span>: <span class="nt">-k</span> 4n /etc/passwd | more
+<span class="c"># COPYING</span>
+<span class="c"># Copy all jpgs to a directory</span>
+<span class="nv">$ </span>find / <span class="nt">-name</span> <span class="k">*</span>.jpg <span class="nt">-type</span> f <span class="nt">-print</span> | xargs <span class="nb">tar</span> <span class="nt">-czvf</span> images.tgz
+<span class="c"># DIFF</span>
+<span class="c"># compare files while ignoring white space</span>
+<span class="nv">$ </span>diff <span class="nt">-w</span> list1.md list2.md
+<span class="c"># Finding files</span>
+<span class="c"># list files by filename pattern</span>
+<span class="nv">$ </span>find <span class="nt">-iname</span> <span class="s2">"log-2015*."</span>
+<span class="c"># RENAME</span>
+<span class="c"># Rename multiple files by pattern in current directory</span>
+<span class="nv">$ </span>rename <span class="s1">'s/text_to_find/text_replacement/'</span> <span class="k">*</span>.html
+</code></pre></div></div>
+<h3 id="user-management1">User Management</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Add user</span>
+<span class="nv">$ </span>adduser newuser
+<span class="c"># Delete user</span>
+<span class="nv">$ </span>deluser newuser
+<span class="c"># Grant sudo privileges to a user</span>
+<span class="nv">$ </span>visudo
+<span class="c"># Then search and copy the line for --&gt; root ALL=(ALL:ALL) ALL</span>
+<span class="c"># Outpust user ID, group ID,, and groups of a username</span>
+<span class="nv">$ </span><span class="nb">id </span>username
+<span class="c"># List usernames of users currently logged in</span>
+<span class="nv">$ </span><span class="nb">users</span>
+<span class="c"># Show listing of last logged in users.</span>
+<span class="nv">$ </span>last <span class="nt">-n</span> 4
+<span class="c"># Add user to sudo group with sudo privileges</span>
+<span class="nv">$ </span>usermod <span class="nt">-aG</span> <span class="nb">sudo</span> &lt;username&gt;
+</code></pre></div></div>
+<h3 id="ssh">SSH</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Prevent timeouts in SSH</span>
+<span class="nv">$ </span>ssh <span class="nt">-o</span> <span class="nv">ServerAliveInterval</span><span class="o">=</span>100 user@yourdomain.com
+</code></pre></div></div>
+</div>
+//// bash scripting
+<div class="page">
+  <h1 class="page-title">Bash Scripting</h1>
+  <h2 id="basics">Basics</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Declaring a variable, no space after equal sign</span>
+<span class="nv">variable</span><span class="o">=</span><span class="s2">"Hello world."</span>
+<span class="c"># Using the variable</span>
+<span class="nb">echo</span> <span class="nv">$variable</span>
+<span class="c"># print an expression</span>
+<span class="nb">echo</span> <span class="k">$((</span> <span class="m">660</span> <span class="o">+</span> <span class="m">6</span> <span class="k">))</span>
+<span class="c"># Builtin variables:</span>
+<span class="nb">echo</span> <span class="s2">"Last program return value: </span><span class="nv">$?</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Script's PID: </span><span class="nv">$$</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Number of arguments: $#"</span>
+<span class="nb">echo</span> <span class="s2">"Scripts arguments: </span><span class="nv">$@</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Scripts arguments separated in different variables: </span><span class="nv">$1</span><span class="s2"> </span><span class="nv">$2</span><span class="s2">..."</span>
+<span class="c"># Reading a value from input:</span>
+<span class="nb">echo</span> <span class="s2">"What's your name?"</span>
+<span class="nb">read </span>name     <span class="c"># no need to declare a new variable</span>
+<span class="nb">echo </span>Hello, <span class="nv">$name</span><span class="o">!</span>
+</code></pre></div></div>
+<h2 id="conditionals">Conditionals</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># basic if structure</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$username</span> <span class="nt">-ne</span> <span class="nv">$USER</span> <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Your name isn't your username"</span>
+<span class="k">else
+    </span><span class="nb">echo</span> <span class="s2">"Your name is your username"</span>
+<span class="k">fi</span>
+<span class="c"># conditional execution</span>
+<span class="nb">echo</span> <span class="s2">"Always executed"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"Only executed if first command fails"</span>
+<span class="nb">echo</span> <span class="s2">"Always executed"</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"Only executed if first command does NOT fail"</span>
+<span class="c"># use square brackets for multiple conditions</span>
+<span class="c"># To use &amp;&amp; and || with if statements, you need multiple pairs of square brackets:</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$userName</span> <span class="o">==</span> <span class="s2">"lucy666"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nv">$age</span> <span class="nt">-eq</span> 15 <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"This will run if </span><span class="nv">$userName</span><span class="s2"> is lucy666 AND </span><span class="nv">$Age</span><span class="s2"> is 66."</span>
+<span class="k">fi
+if</span> <span class="o">[</span> <span class="nv">$userName</span> <span class="o">==</span> <span class="s2">"bastard21"</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="nv">$userName</span> <span class="o">==</span> <span class="s2">"evilclown"</span> <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"This will run if </span><span class="nv">$userName</span><span class="s2"> is bastard21 OR evilclown."</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+<h2 id="switch-statements">Switch Statements</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="s2">"</span><span class="nv">$myVar</span><span class="s2">"</span> <span class="k">in</span>
+    <span class="c"># List patterns for the conditions you want to meet</span>
+    0<span class="p">)</span> <span class="nb">echo</span> <span class="s2">"There is a zero."</span><span class="p">;;</span>
+    1<span class="p">)</span> <span class="nb">echo</span> <span class="s2">"There is a one."</span><span class="p">;;</span>
+    <span class="k">*</span><span class="p">)</span> <span class="nb">echo</span> <span class="s2">"It is not null."</span><span class="p">;;</span>
+<span class="k">esac</span>
+</code></pre></div></div>
+<h2 id="loop-statements">Loop Statements</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># print variable 3 times</span>
+<span class="k">for </span>myVar <span class="k">in</span> <span class="o">{</span>1..3<span class="o">}</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$myVar</span><span class="s2">"</span>
+<span class="k">done</span>
+<span class="c"># Or write it the "traditional for loop" way:</span>
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span>1<span class="p">;</span> i &lt;<span class="o">=</span> 3<span class="p">;</span> i++<span class="o">))</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+<span class="c"># can be used to act on files..</span>
+<span class="c"># This will run the command 'cat' on file1 and file2</span>
+<span class="k">for </span>myVar <span class="k">in </span>file1 file2
+<span class="k">do
+    </span><span class="nb">cat</span> <span class="s2">"</span><span class="nv">$myVar</span><span class="s2">"</span>
+<span class="k">done</span>
+<span class="c"># output from a command</span>
+<span class="c"># This will cat the output from ls command.</span>
+<span class="k">for </span>x <span class="k">in</span> <span class="si">$(</span><span class="nb">ls</span><span class="si">)</span>
+<span class="k">do
+    </span><span class="nb">cat</span> <span class="s2">"</span><span class="nv">$x</span><span class="s2">"</span>
+<span class="k">done</span>
+<span class="c"># while loop:</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nb">true</span> <span class="o">]</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"loop body..."</span>
+    <span class="nb">break
+</span><span class="k">done</span>
+</code></pre></div></div>
+<h2 id="functions">Functions</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># define a function</span>
+<span class="k">function </span>foo <span class="o">()</span>
+<span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">"Arguments work just like script arguments: </span><span class="nv">$@</span><span class="s2">"</span>
+    <span class="nb">echo</span> <span class="s2">"And: </span><span class="nv">$1</span><span class="s2"> </span><span class="nv">$2</span><span class="s2">..."</span>
+    <span class="nb">echo</span> <span class="s2">"This is a function"</span>
+    <span class="k">return </span>0
+<span class="o">}</span>
+<span class="c"># alternatively, you can also just declare without the function keyword</span>
+bar <span class="o">()</span>
+<span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">"Another way to declare functions!"</span>
+    <span class="k">return </span>0
+<span class="o">}</span>
+<span class="c"># Calling you function</span>
+foo <span class="s2">"My name is"</span> <span class="nv">$name</span>
+</code></pre></div></div>
+<h2 id="finding-files">Finding files</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># find files that start with the word "text"</span>
+find <span class="nt">-name</span> <span class="s2">"text"</span>
+<span class="c"># find only directories</span>
+find /var/log <span class="nt">-name</span> <span class="s2">"syslog"</span> <span class="nt">-type</span> d
+<span class="c"># find only files</span>
+find <span class="nt">-type</span> f
+</code></pre></div></div>
+<h2 id="extract-sort-and-filter-data">Extract, sort and filter data</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep</span> &lt;someText&gt; &lt;fileName&gt; <span class="o">=</span> search <span class="k">for </span>text <span class="k">in </span>file
+        <span class="nt">-i</span> <span class="o">=</span> <span class="k">case</span> insensitive
+        <span class="nt">-I</span> <span class="o">=</span> exclude binary files
+<span class="nb">grep</span> <span class="nt">-E</span> ^&lt;text&gt; &lt;fileName&gt; <span class="o">=</span> search start of lines with the word text
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort</span> &lt;fileName&gt; <span class="o">=</span> <span class="nb">sort </span>alphabetically
+<span class="nb">sort</span> <span class="nt">-o</span> &lt;file&gt; &lt;outputFile&gt; <span class="o">=</span> write result to a file
+<span class="nb">sort</span> <span class="nt">-r</span> &lt;fileName&gt; <span class="o">=</span> <span class="nb">sort </span><span class="k">in </span>reverse
+<span class="nb">sort</span> <span class="nt">-R</span> &lt;fileName&gt; <span class="o">=</span> <span class="nb">sort </span>randomly
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">wc</span> &lt;fileName&gt; <span class="o">=</span> word count
+options:
+  <span class="nt">-l</span> <span class="o">(</span>lines<span class="o">)</span>, <span class="nt">-w</span> <span class="o">(</span>words<span class="o">)</span>, <span class="nt">-c</span> <span class="o">(</span>byte size<span class="o">)</span>, <span class="nt">-m</span> <span class="o">(</span>number of characters<span class="o">)</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cut</span> <span class="o">=</span> <span class="nb">cut </span>a part of a file
+options:
+  <span class="nt">-c</span> <span class="nt">--</span><span class="o">&gt;</span> Ex, <span class="nb">cut</span> <span class="nt">-c</span> 2-5 names.txt
+  <span class="o">(</span><span class="nb">cut </span>the characters 2 to 5 of each line<span class="o">)</span>
+  <span class="nt">-d</span> <span class="o">(</span>delimiter<span class="o">)</span> <span class="o">(</span><span class="nt">-d</span> &amp; <span class="nt">-f</span> good <span class="k">for</span> .csv files<span class="o">)</span>
+  <span class="nt">-f</span> <span class="o">(</span><span class="c"># of field to cut)</span>
+</code></pre></div></div>
+</div>
+//// css
+<div class="page">
+  <h3 class="page-title">CSS</h3>
+  <h3 id="css-selectors">CSS Selectors</h3>
+<p>Selectors define to which elements a set of CSS rules apply.</p>
+<h3 id="basic-selectors">Basic Selectors</h3>
+<table>
+  <tbody>
+  <tr>
+    <th>Selector</th>
+    <th>Example</th>
+    <th>Example description</th>
+  </tr>
+  <tr>
+    <td>.<i>class</i></td>
+    <td>.intro</td>
+    <td>Selects all elements with class="intro"</td>
+  </tr>
+  <tr>
+    <td>#<i>id</i></td>
+    <td>#firstname</td>
+    <td>Selects the element with id="firstname"</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>*</td>
+    <td>An asterisk (*) is the universal selector for CSS. It matches a single element of any type. Omitting the asterisk with simple selectors has the same effect. For instance, `*.warning` and `.warning` are considered equal.
+    </td>
+  </tr>
+  <tr>
+    <td><i>element</i></td>
+    <td>p</td>
+    <td>CSS type selectors match elements by node name. In the example, it selects all &lt;p&gt; elements</td>
+  </tr>
+  <tr>
+    <td><i>element,element</i></td>
+    <td>div, p</td>
+    <td>Selects all &lt;div&gt; elements and all &lt;p&gt; elements</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>]</td>
+    <td>[target]</td>
+    <td>Selects all elements with a target attribute</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>=<i>value</i>]</td>
+    <td>[target=_blank]</td>
+    <td>Selects all elements with target="_blank"</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>~=<i>value</i>]</td>
+    <td>[title~=flower]</td>
+    <td>Selects all elements with a title attribute containing the word "flower"</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>|=<i>value</i>]</td>
+    <td>[lang|=en]</td>
+    <td>Selects all elements with a lang attribute value starting with "en"</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>^=<i>value</i>]</td>
+    <td>a[href^="https"]</td>
+    <td>Selects every &lt;a&gt; element whose href attribute value begins with "https"</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>$=<i>value</i>]</td>
+    <td>a[href$=".pdf"]</td>
+    <td>Selects every &lt;a&gt; element whose href attribute value ends with ".pdf"</td>
+  </tr>
+  <tr>
+    <td>[<i>attribute</i>*=<i>value</i>]</td>
+    <td>a[href*="motorhead"]</td>
+    <td>Selects every &lt;a&gt; element whose href attribute value contains the substring
+  "motorhead"</td>
+  </tr>
+  </tbody>
+</table>
+<h3 id="combinators">Combinators</h3>
+<table>
+  <tbody>
+  <tr>
+    <th>Selector</th>
+    <th>Example</th>
+    <th>Example description</th>
+  </tr>
+  <tr>
+    <td><i>element</i> <i>element</i></td>
+    <td>div p</td>
+    <td>Descendant selector. Selects all &lt;p&gt; elements inside &lt;div&gt; elements. </td>
+  </tr>
+  <tr>
+    <td><i>element</i>&gt;<i>element</i></td>
+    <td>div &gt; p</td>
+    <td>Child selector. Selects all &lt;p&gt; elements where the parent is a &lt;div&gt; element. The difference between the standard X Y and X &gt; Y is that the latter will only select direct children.</td>
+  </tr>
+  <tr>
+    <td><i>element</i>+<i>element</i></td>
+    <td>div + p</td>
+    <td>Adjacent selector or next-sibling selector.  It will select only the specified element that immediately follows the former specified element. In this example, it selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements</td>
+  </tr>
+  <tr>
+    <td><i>element1</i>~<i>element2</i></td>
+    <td>p ~ ul</td>
+    <td>General sibling selector. Selects every &lt;ul&gt; element that are preceded by a &lt;p&gt; element</td>
+  </tr>
+  </tbody>
+</table>
+</div></pre>
+<h3 id="pseudo-elements">Pseudo-elements</h3>
+<p>Pseudo-elements are added to selectors but instead of describing a special state, they allow you to style certain parts of a document. For example, the <code class="language-plaintext highlighter-rouge">::first-line</code> pseudo-element targets only  the first line of an element specified by the selector.</p>
+<table>
+  <tbody>
+  <tr>
+    <th>Selector</th>
+    <th>Example</th>
+    <th>Example description</th>
+  </tr>
+  <tr>
+    <td>s::after</td>
+    <td>p::after</td>
+    <td>Insert something after the content of each &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td>::before</td>
+    <td>p::before</td>
+    <td>Insert something before&nbsp;the content of each &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td>::first-letter</td>
+    <td>p::first-letter</td>
+    <td>Selects the first letter of every &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td>::first-line</td>
+    <td>p::first-line</td>
+    <td>Selects the first line of every &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td>::selection</td>
+    <td>::selection</td>
+    <td>Selects the portion of an element that is selected by a user</td>
+  </tr>
+  </tbody>
+</table>
+</div></pre>
+<h3 id="pseudo-classes">Pseudo-classes</h3>
+<p>A CSS pseudo-class is a keyword added to selectors that specifies a special state of the element to be selected. For example <code class="language-plaintext highlighter-rouge">:hover</code> will apply a style when the user hovers over the element specified by the selector.</p>
+<table>
+  <tbody>
+  <tr>
+    <th>Selector</th>
+    <th>Example</th>
+    <th>Example description</th>
+  </tr>
+  <tr>
+    <td>:active</td>
+    <td>a:active</td>
+    <td>Selects the active link</td>
+  </tr>
+  <tr>
+    <td>:checked</td>
+    <td>input:checked</td>
+    <td>Selects every checked &lt;input&gt; element</td>
+  </tr>
+  <tr>
+    <td>:disabled</td>
+    <td>input:disabled</td>
+    <td>Selects every disabled &lt;input&gt; element</td>
+  </tr>
+  <tr>
+    <td>:empty</td>
+    <td>p:empty</td>
+    <td>Selects every &lt;p&gt; element that has no children (including text nodes)</td>
+  </tr>
+  <tr>
+    <td>:enabled</td>
+    <td>input:enabled</td>
+    <td>Selects every enabled &lt;input&gt; element</td>
+  </tr>
+  <tr>
+    <td>:first-child</td>
+    <td>p:first-child</td>
+    <td>Selects every &lt;p&gt; element that is the first child of its parent</td>
+  </tr>
+  <tr>
+    <td>:first-of-type</td>
+    <td>p:first-of-type</td>
+    <td>Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:focus</td>
+    <td>input:focus</td>
+    <td>Selects the input element which has focus</td>
+  </tr>
+  <tr>
+    <td>:hover</td>
+    <td>a:hover</td>
+    <td>Selects links on mouse over</td>
+  </tr>
+  <tr>
+    <td>:in-range</td>
+    <td>input:in-range</td>
+    <td>Selects input elements with a value within a specified range</td>
+  </tr>
+  <tr>
+    <td>:invalid</td>
+    <td>input:invalid</td>
+    <td>Selects all input elements with an invalid value</td>
+  </tr>
+  <tr>
+    <td>:lang(<i>language</i>)</td>
+    <td>p:lang(it)</td>
+    <td>Selects every &lt;p&gt; element with a lang attribute equal to "it"
+  (Italian)</td>
+  </tr>
+  <tr>
+    <td>:last-child</td>
+    <td>p:last-child</td>
+    <td>Selects every &lt;p&gt; element that is the last child of its parent</td>
+  </tr>
+  <tr>
+    <td>:last-of-type</td>
+    <td>p:last-of-type</td>
+    <td>Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:link</td>
+    <td>a:link</td>
+    <td>Selects all unvisited links</td>
+  </tr>
+  <tr>
+    <td>:not(<i>selector</i>)</td>
+    <td>:not(p)</td>
+    <td>Selects every element that is not a &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td>:nth-child(<i>n</i>)</td>
+    <td>p:nth-child(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second child of its parent</td>
+  </tr>
+  <tr>
+    <td>:nth-last-child(<i>n</i>)</td>
+    <td>p:nth-last-child(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second child of its parent, counting
+  from the last child</td>
+  </tr>
+  <tr>
+    <td>:nth-last-of-type(<i>n</i>)</td>
+    <td>p:nth-last-of-type(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent, counting
+  from the last child</td>
+  </tr>
+  <tr>
+    <td>:nth-of-type(<i>n</i>)</td>
+    <td>p:nth-of-type(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:only-of-type</td>
+    <td>p:only-of-type</td>
+    <td>Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its
+  parent</td>
+  </tr>
+  <tr>
+    <td>:only-child</td>
+    <td>p:only-child</td>
+    <td>Selects every &lt;p&gt; element that is the only child of its parent</td>
+  </tr>
+  <tr>
+    <td>:optional</td>
+    <td>input:optional</td>
+    <td>Selects input elements with no "required" attribute</td>
+  </tr>
+  <tr>
+    <td>:out-of-range</td>
+    <td>input:out-of-range</td>
+    <td>Selects input elements with a value outside a specified range</td>
+  </tr>
+  <tr>
+    <td>:read-only</td>
+    <td>input:read-only</td>
+    <td>Selects input elements with the "readonly" attribute specified</td>
+  </tr>
+  <tr>
+    <td>:read-write</td>
+    <td>input:read-write</td>
+    <td>Selects input elements with the "readonly" attribute NOT specified</td>
+  </tr>
+  <tr>
+    <td>:required</td>
+    <td>input:required</td>
+    <td>Selects input elements with the "required" attribute specified</td>
+  </tr>
+  <tr>
+    <td>:root</td>
+    <td>:root</td>
+    <td>Selects the document's root element</td>
+  </tr>
+  <tr>
+    <td>:target</td>
+    <td>#news:target </td>
+    <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
+  </tr>
+  <tr>
+    <td>:valid</td>
+    <td>input:valid</td>
+    <td>Selects all input elements with a valid value</td>
+  </tr>
+  <tr>
+    <td>:visited</td>
+    <td>a:visited</td>
+    <td>Selects all visited links</td>
+  </tr>
+  </tbody>
+</table>
+<h3 id="animation">Animation</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">pulse</span> <span class="m">5s</span> <span class="n">infinite</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@keyframes</span> <span class="n">pulse</span> <span class="p">{</span>
+  <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#001F32</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#D41368</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div></div></pre>
+<h3 id="sub-properties">Sub-properties</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><code><span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">animation-name</span><span class="p">:</span> <span class="n">stretch</span><span class="p">;</span>
+  <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">1.5s</span><span class="p">;</span>
+  <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">ease-out</span><span class="p">;</span>
+  <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>  <span class="err">//Specifies</span> <span class="err">a</span> <span class="err">delay</span> <span class="err">for</span> <span class="err">the</span> <span class="err">start</span> <span class="err">of</span> <span class="err">an</span> <span class="err">animation</span>
+  <span class="nl">animation-direction</span><span class="p">:</span> <span class="n">alternate</span><span class="p">;</span>  <span class="err">//Specifies</span> <span class="err">whether</span> <span class="err">an</span> <span class="err">animation</span> <span class="err">should</span> <span class="err">play</span> <span class="err">in</span> <span class="err">reverse</span> <span class="err">direction</span> <span class="err">or</span> <span class="err">alternate</span> <span class="err">cycles</span>
+  <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span>
+  <span class="nl">animation-fill-mode</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">animation-play-state</span><span class="p">:</span> <span class="n">running</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+//// flex-box
+<div class="page">
+  <h3 class="page-title">Flexbox</h3>
+  <h3 id="create-a-flex-container">Create a Flex Container</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="row-layout">Row layout</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="column-layout">Column layout</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="align-layout-to-top">Align Layout to Top</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span> <span class="c">/* row if horizontal layout */</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="n">flex-start</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="align-layout-to-left">Align Layout to Left</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="n">flex-start</span><span class="p">;</span> <span class="c">/* align-items: flex-start; if column */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="align-layout-to-right">Align Layout to Right</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="n">flex-end</span><span class="p">;</span> <span class="c">/* align-items: flex-end; if column */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="center-everything">Center everything</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flexcontainer</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span> <span class="c">/* works wth 'column' as well */</span>
+   <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="grow-a-flex-item-x-times-as-big-as-other-flex-items">Grow a flex item X times as big as other flex items</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.big-item</span> <span class="p">{</span>
+   <span class="c">/* This will be twice as big as the small item. */</span>
+   <span class="nl">flex</span><span class="p">:</span> <span class="m">2</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.small-item</span> <span class="p">{</span>
+   <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="wrap-flex-items-into-multiple-rows">Wrap flex items into multiple rows</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* On the flex container */</span>
+<span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-flex</span><span class="p">;</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="c">/* You can set flex-wrap and flex-direction individually */</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span>
+   <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+   <span class="c">/* Or do it all in one line with flex flow */</span>
+   <span class="nl">flex-flow</span><span class="p">:</span> <span class="n">row</span> <span class="n">wrap</span><span class="p">;</span>
+   <span class="c">/* tweak the where items line up on the row */</span>
+   <span class="c">/* valid values are: flex-start, flex-end, space-between, space-around, stretch */</span>
+   <span class="nl">align-content</span><span class="p">:</span> <span class="n">flex-end</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="wrap-flex-items-into-multiple-columns">Wrap flex items into multiple columns</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-flex</span><span class="p">;</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="nl">flex-flow</span><span class="p">:</span> <span class="n">column</span> <span class="n">wrap</span><span class="p">;</span>
+   <span class="nl">align-content</span><span class="p">:</span> <span class="n">stretch</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="remove-the-space-from-wrapped-rows-or-columns">Remove the space from wrapped rows or columns</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flexcontainer</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+   <span class="nl">flex-flow</span><span class="p">:</span> <span class="n">column</span> <span class="n">wrap</span><span class="p">;</span>
+   <span class="nl">align-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Reference:</p>
+<p><a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html">http://www.sketchingwithcss.com/samplechapter/cheatsheet.html</a></p>
+</div>
+//// es6
+<div class="page">
+  <h3 class="page-title">ES6</h3>
+  <h3 id="es6-new-features">ES6 New Features:</h3>
+<ul>
+  <li><a href="#arrows">arrows</a></li>
+  <li><a href="#classes">classes</a></li>
+  <li><a href="#enhanced-object-literals">enhanced object literals</a></li>
+  <li><a href="#template-strings">template strings</a></li>
+  <li><a href="#destructuring">destructuring</a></li>
+  <li><a href="#default--rest--spread">default + rest + spread</a></li>
+  <li><a href="#let--const">let + const</a></li>
+  <li><a href="#iterators--forof">iterators + for..of</a></li>
+  <li><a href="#generators">generators</a></li>
+  <li><a href="#unicode">unicode</a></li>
+  <li><a href="#modules">modules</a></li>
+  <li><a href="#module-loaders">module loaders</a></li>
+  <li><a href="#map--set--weakmap--weakset">map + set + weakmap + weakset</a></li>
+  <li><a href="#proxies">proxies</a></li>
+  <li><a href="#symbols">symbols</a></li>
+  <li><a href="#subclassable-built-ins">subclassable built-ins</a></li>
+  <li><a href="#promises">promises</a></li>
+  <li><a href="#math--number--string--array--object-apis">math + number + string + array + object APIs</a></li>
+  <li><a href="#binary-and-octal-literals">binary and octal literals</a></li>
+  <li><a href="#reflect-api">reflect api</a></li>
+  <li><a href="#tail-calls">tail calls</a></li>
+</ul>
+<h3 id="arrows">Arrows</h3>
+<p>Arrows are a function shorthand using the =&gt; syntax.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Expression bodies</span>
+<span class="kd">var</span> <span class="nx">odds</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nums</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">v</span> <span class="o">+</span> <span class="nx">i</span><span class="p">);</span>
+<span class="c1">// Statement bodies</span>
+<span class="nx">nums</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">v</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nx">fives</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// Lexical this</span>
+<span class="kd">var</span> <span class="nx">bob</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">_name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bob</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">_friends</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nx">printFriends</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_friends</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">f</span> <span class="o">=&gt;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> knows </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">f</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="enhanced-object-literals">Enhanced Object Literals</h3>
+<p>Object literals are extended to support setting the prototype at construction,
+shorthand for foo: foo assignments, defining methods and making super calls.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// __proto__</span>
+    <span class="na">__proto__</span><span class="p">:</span> <span class="nx">theProtoObj</span><span class="p">,</span>
+    <span class="c1">// Shorthand for ‘handler: handler’</span>
+    <span class="nx">handler</span><span class="p">,</span>
+    <span class="c1">// Methods</span>
+    <span class="nx">toString</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// Super calls</span>
+     <span class="k">return</span> <span class="dl">"</span><span class="s2">d </span><span class="dl">"</span> <span class="o">+</span> <span class="k">super</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="p">},</span>
+    <span class="c1">// Computed (dynamic) property names</span>
+    <span class="p">[</span> <span class="dl">"</span><span class="s2">prop_</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="mi">42</span><span class="p">)()</span> <span class="p">]:</span> <span class="mi">42</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<h3 id="template-strings">Template Strings</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lemmy</span><span class="dl">"</span><span class="p">,</span> <span class="nx">time</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">today</span><span class="dl">"</span><span class="p">;</span>
+<span class="s2">`Hello </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">, how are you </span><span class="p">${</span><span class="nx">time</span><span class="p">}</span><span class="s2">?`</span>
+</code></pre></div></div></div></pre>
+<h3 id="let--const">Let + Const</h3>
+<p>Block-scoped binding constructs. <code class="language-plaintext highlighter-rouge">let</code> is the new var. <code class="language-plaintext highlighter-rouge">const</code> is single-assignment. Static restrictions prevent use before assignment.</p>
+<p>Notes:</p>
+<ul>
+  <li>You cannot change value of a <code class="language-plaintext highlighter-rouge">const</code> variable after you create it.</li>
+  <li><code class="language-plaintext highlighter-rouge">let</code> and <code class="language-plaintext highlighter-rouge">const</code> varaibles are never hoisted to the top of their scopes.</li>
+  <li><code class="language-plaintext highlighter-rouge">let</code> has major advantage of rebinding the loop variable on every iteration, so each loop get its ‘own’ copy, rather than the globally-scoped variable.</li>
+</ul>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="p">{</span>
+      <span class="c1">// okay, block scoped name</span>
+      <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sneaky</span><span class="dl">"</span><span class="p">;</span>
+      <span class="c1">// error, const</span>
+      <span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// error, already declared in block</span>
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">inner</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="iterators--forof">Iterators + For..Of</h3>
+<p>Generalize <code class="language-plaintext highlighter-rouge">for..in</code> to custom iterator-based iteration with <code class="language-plaintext highlighter-rouge">for..of</code>.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">pre</span><span class="p">,</span> <span class="nx">cur</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">cur</span><span class="p">,</span> <span class="nx">pre</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">cur</span> <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="k">of</span> <span class="nx">fibonacci</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// truncate the sequence at 1000</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="generators">Generators</h3>
+<p>Generators simplify iterator-authoring using <code class="language-plaintext highlighter-rouge">function*</code> and <code class="language-plaintext highlighter-rouge">yield</code>. 
+A function declared as function* returns a Generator instance. Generators are subtypes 
+of iterators which include additional <code class="language-plaintext highlighter-rouge">next</code> and <code class="language-plaintext highlighter-rouge">throw</code>. 
+These enable values to flow back into the generator, so <code class="language-plaintext highlighter-rouge">yield</code>
+is an expression form which returns a value (or throws).</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]:</span> <span class="kd">function</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">pre</span><span class="p">;</span>
+      <span class="nx">pre</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+      <span class="nx">cur</span> <span class="o">+=</span> <span class="nx">temp</span><span class="p">;</span>
+      <span class="k">yield</span> <span class="nx">cur</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="k">of</span> <span class="nx">fibonacci</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// truncate the sequence at 1000</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div></div></pre>
+<h3 id="unicode">Unicode</h3>
+<p>Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp <code class="language-plaintext highlighter-rouge">u</code>mode to handle code points, as well as new APIs to process strings at the 21bit code points level. These additions support building global apps in JavaScript.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// same as ES5.1</span>
+<span class="dl">"</span><span class="s2">𠮷</span><span class="dl">"</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="c1">// new RegExp behaviour, opt-in ‘u’</span>
+<span class="dl">"</span><span class="s2">𠮷</span><span class="dl">"</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/./u</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="c1">// new form</span>
+<span class="dl">"</span><span class="se">\</span><span class="s2">u{20BB7}</span><span class="dl">"</span><span class="o">==</span><span class="dl">"</span><span class="s2">𠮷</span><span class="dl">"</span><span class="o">==</span><span class="dl">"</span><span class="se">\</span><span class="s2">uD842</span><span class="se">\</span><span class="s2">uDFB7</span><span class="dl">"</span>
+<span class="c1">// new String ops</span>
+<span class="dl">"</span><span class="s2">𠮷</span><span class="dl">"</span><span class="p">.</span><span class="nx">codePointAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x20BB7</span>
+<span class="c1">// for-of iterates code points</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">c</span> <span class="k">of</span> <span class="dl">"</span><span class="s2">𠮷</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="modules">Modules</h3>
+<p>Prior to ES6, we used libraries such as <a href="http://browserify.org/">Browserify</a> to create modules on the client-side, and require in Node.js. With ES6, we can now directly use modules of all types (AMD and CommonJS).</p>
+<h3 id="exporting-in-commonjs">Exporting in CommonJS</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span> <span class="p">};</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">bar</span> <span class="p">()</span> <span class="p">{};</span>
+</code></pre></div></div>
+<h3 id="exporting-in-es6">Exporting in ES6</h3>
+<p>Named exports:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Lemmy</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">let</span> <span class="nx">age</span>  <span class="o">=</span> <span class="mi">70</span><span class="p">;</span><span class="err">​​</span>
+</code></pre></div></div>
+<p>Exporting a list of objects:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sumTwo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">sumThree</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">sumTwo</span><span class="p">,</span> <span class="nx">sumThree</span> <span class="p">};</span>
+</code></pre></div></div>
+<p>Export functions, objects and values (etc.) simply by using the export keyword:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">sumTwo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">sumThree</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Export default bindings:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sumTwo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">sumThree</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">sumTwo</span><span class="p">,</span>
+    <span class="nx">sumThree</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">api</span><span class="p">;</span>
+<span class="cm">/* Which is the same as
+ * export { api as default };
+ */</span>
+</code></pre></div></div>
+<p>Reference</p>
+<p><a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 features</a></p>
+</div>
+//// git
+<div class="page">
+  <h3 class="page-title">Git</h3>
+  <p>Here are some of the Git commands that I often use.</p>
+<h3 id="basic">Basic</h3>
+<p>Display local repo config settings</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span>
+</code></pre></div></div>
+<p>Show remote repository URL</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--get</span> remote.origin.url
+<span class="c"># or</span>
+git remote show origin
+</code></pre></div></div>
+<p>Change origin URL</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote set-url origin http//github.com/repo.git
+</code></pre></div></div>
+<p>Add remote repo</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add remote-name https://github.com/user/repo.git
+</code></pre></div></div>
+<p>Check remote repository URL of current repo</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--get</span> remote.origin.url
+</code></pre></div></div></div></pre>
+<p>Syncing a fork</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Fetch the branches and their
+ respective commits from the upstream repository. 
+Commits to master will be stored <span class="k">in </span>a <span class="nb">local </span>branch, upstream/master
+git fetch upstream
+git checkout master
+git merge upstream/master
+</code></pre></div></div>
+<p>View Change Log</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log <span class="nt">--oneline</span> <span class="nt">--decorate</span> <span class="nt">--color</span>
+</code></pre></div></div>
+<h3 id="refactor-filenames">Refactor filenames</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Deletes file from working directory and stages the deletion
+git <span class="nb">rm</span> &lt;filename&gt;
+// Removes file from version control but preserves file locally
+git <span class="nb">rm</span> <span class="nt">--cached</span> &lt;filename&gt;
+// Changes file name and prepares it <span class="k">for </span>commit
+git <span class="nb">mv</span> &lt;filename-orig&gt; &lt;filename-renamed&gt;
+</code></pre></div></div>
+<h3 id="commits">Commits</h3>
+<p>If you want to see what you haven’t <code class="language-plaintext highlighter-rouge">git add</code>ed yet:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--</span> myfile.txt
+</code></pre></div></div>
+<p>If you want to see already-added changes</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--cached</span> <span class="nt">--</span> myfile.txt
+</code></pre></div></div>
+<p>Unstage a file for commit</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset &lt;file&gt;
+</code></pre></div></div>
+<p>Combining commits</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Interactive rebasing of last 3 commits
+git rebase <span class="nt">-i</span> HEAD~3
+//Tells Git to combine all 3 commits into the 1st commit
+pick 01d112s New header design
+squash 63423aa Added search bar
+squash ebfd157 Updated header icon
+</code></pre></div></div>
+<p>Change last commit message</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">--amend</span> <span class="nt">-m</span> <span class="s2">"New commit message"</span>
+</code></pre></div></div>
+<p>Discard all local changes</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="nt">--hard</span>
+</code></pre></div></div>
+<p>Undo last commit &amp; redo</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit ...                <span class="o">(</span>1<span class="o">)</span>
+git reset <span class="nt">--soft</span> HEAD~1       <span class="o">(</span>2<span class="o">)</span>
+<span class="o">&lt;&lt;</span> <span class="no">edit</span><span class="sh"> files as necessary &gt;&gt; (3)
+git add ....                  (4)
+git commit -c ORIG_HEAD       (5)
+</span></code></pre></div></div>
+<h3 id="stash">Stash</h3>
+<p>Temporarily stash changes, apply later</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Stash current changes
+git stash
+//List all stashed changesets
+git stash list
+<span class="c"># Do some new changes</span>
+// Apply stashed changes
+git stash apply
+</code></pre></div></div>
+<h3 id="manage-branches">Manage Branches</h3>
+<p>Reset local repo to match remote repo</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+git reset <span class="nt">--hard</span> origin/master
+</code></pre></div></div>
+<p>Pull latest changes from a remote repo</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch
+git pull
+</code></pre></div></div>
+<p>Delete a local branch</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-d</span> &lt;branch-name&gt;
+</code></pre></div></div>
+<p>Delete a remote branch</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin :remote_branch
+</code></pre></div></div></pro></pre>
+<h3 id="merging-a-finished-feature-branch">Merging a finished feature branch</h3>
+<p>The <code class="language-plaintext highlighter-rouge">--no-ff</code> flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git co develop
+git merge <span class="nt">--no-ff</span> myfeature
+git branch <span class="nt">-d</span> myfeature
+git push origin develop
+</code></pre></div></div>
+<h3 id="create-a-release-branch">Create a release branch</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> release-1.2 develop
+./bump-version.sh 1.2
+git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"Bumped version number to 1.2"</span>
+</code></pre></div></div>
+<h3 id="finishing-a-release-branch">Finishing a release branch</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+git merge <span class="nt">--no-ff</span> release-1.2
+git tag <span class="nt">-a</span> 1.2
+</code></pre></div></div>
+<p>To keep the changes made in the release branch, we need to merge those back into develop, though.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout develop
+git merge <span class="nt">--no-ff</span> release-1.2
+// delete release branch, no longer needed
+git branch <span class="nt">-d</span> release-1.2
+</code></pre></div></div>
+<h3 id="creating-a-hotfix-branch">Creating a hotfix branch</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> hotfix-1.2.1 master
+./bump-version.sh 1.2.1
+git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"Bumped version number to 1.2.1"</span>
+</code></pre></div></div>
+<p>Don’t forget to bump the version number after branching off.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Fixed severe production problem"</span>
+</code></pre></div></div>
+<h3 id="finishing-a-hotfix-branch">Finishing a hotfix branch</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+git merge <span class="nt">--no-ff</span> hotfix-1.2.1
+git tag <span class="nt">-a</span> 1.2.1
+// include fix into develop
+git checkout develop
+git merge <span class="nt">--no-ff</span> hotfix-1.2.1.2
+git branch <span class="nt">-d</span> hotfix-1.2.1
+</code></pre></div></div>
+</div>
+//// node
+<div class="page">
+  <h3 class="page-title">Angular</h3>
+  <h3 id="bootstrap-angular-application">Bootstrap Angular application</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-app=</span><span class="s">"appName"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+<h3 id="modules">Modules</h3>
+<p>Create a module that depends on module1 and module2</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">module1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">module2</span><span class="dl">'</span><span class="p">]);</span>
+</code></pre></div></div>
+<p>Get reference of a module named app</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+<h3 id="filters">Filters</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">"</span><span class="s2">myModule</span><span class="dl">"</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="dl">"</span><span class="s2">squareNumber</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>Usage:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span> {{value || squareNumber }} <span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+<h3 id="options">Options</h3>
+<ul>
+  <li>currency - Formats a number as a currency.</li>
+  <li>date - Formats a number as a date.e.g. yyyy-MM-dd HH:mm:ss Z</li>
+  <li>html - Prevents the input from getting escaped by angular.</li>
+  <li>json - Converts a JavaScript object into JSON string.</li>
+  <li>lowercase - lowercases a string.</li>
+  <li>number - formats a number as text</li>
+</ul>
+<h3 id="controllers">Controllers</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">"</span><span class="s2">myModule</span><span class="dl">"</span><span class="p">).</span><span class="nx">controller</span><span class="p">(</span><span class="dl">"</span><span class="s2">SampleController</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">){</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">songTitle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hand of Doom</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>In the view</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"SampleController"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>{{songTitle}}<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<h3 id="services">Services</h3>
+<p>Services in Angular are singletons. Only one instance of the service is created in the Angular application’s lifetime.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">"</span><span class="s2">myModule</span><span class="dl">"</span><span class="p">).</span><span class="nx">service</span><span class="p">(</span><span class="dl">"</span><span class="s2">sampleService</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">svc</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">songTitles</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Here Comes The Pain</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">South of Heaven</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Raining Blood</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Skeleton Christ</span><span class="dl">"</span><span class="p">];</span>
+    <span class="nx">svc</span><span class="p">.</span><span class="nx">addSong</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">song</span><span class="p">){</span>
+        <span class="nx">songTitles</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">song</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="nx">svc</span><span class="p">.</span><span class="nx">getSongTitles</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">songTitles</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<h3 id="directives">Directives</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myModule</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="dl">"</span><span class="s2">directiveName</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">injectables</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">restrict</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;div&gt;&lt;/div&gt;</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">directive.html</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">replace</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">transclude</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">scope</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">require</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">someOtherDirective</span><span class="dl">"</span><span class="p">],</span>
+        <span class="na">controller</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$element</span><span class="p">,</span> <span class="nx">$attrs</span><span class="p">,</span> <span class="nx">$transclude</span><span class="p">,</span> <span class="nx">otherInjectables</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+        <span class="na">link</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">postLink</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">iElement</span><span class="p">,</span> <span class="nx">iAttrs</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+        <span class="na">priority</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">terminal</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">compile</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">compile</span><span class="p">(</span><span class="nx">tElement</span><span class="p">,</span> <span class="nx">tAttrs</span><span class="p">,</span> <span class="nx">transclude</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="na">pre</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">preLink</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">iElement</span><span class="p">,</span> <span class="nx">iAttrs</span><span class="p">,</span> <span class="nx">controller</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+                <span class="na">post</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">postLink</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">iElement</span><span class="p">,</span> <span class="nx">iAttrs</span><span class="p">,</span> <span class="nx">controller</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>//Update this section based on docs.angularjs.org</p>
+<h3 id="built-in-directives">Built-in Directives</h3>
+<ul>
+  <li><strong>ng-app</strong>: To auto-bootstrap the application</li>
+  <li><strong>ng-controller</strong>: To attach a controller to a view</li>
+  <li><strong>ng-view</strong>: To render the template of the current route to the main layout (<code class="language-plaintext highlighter-rouge">index.html</code>). Requires <code class="language-plaintext highlighter-rouge">ngRoute</code> module to be installed</li>
+  <li><em>*ng-show / ng-hide</em>: Shows/hides content within the directive based on boolean equivalent of value assigned&lt;/li&gt;</li>
+  <li><strong>ng-if</strong>: Places or removes the DOM elements under this directive based on boolean equivalent of value assigned&lt;/li&gt;</li>
+  <li><strong>ng-model</strong>: Enables two-way data binding on any input controls and sends validity of data in the input control to the enclosing form&lt;/li&gt;</li>
+  <li><strong>ng-class</strong>: Provides an option to assign value of a model to CSS, conditionally apply styles and use multiple models for CSS declaratively</li>
+  <li><strong>ng-repeat</strong>: Loops through a list of items and copies the HTML for every record in the collection&lt;/li&gt;</li>
+  <li><strong>ng-options</strong>: Used with HTML select element to render options based on data in a collection&lt;/li&gt;</li>
+  <li><strong>ng-href</strong>: Assigns a model as hyperlink to an anchor element&lt;/li&gt;</li>
+  <li><strong>ng-src</strong>: Assigns a model to source of an image element&lt;/li&gt;</li>
+  <li><strong>ng-click</strong>: To handle click event on any element&lt;/li&gt;</li>
+  <li><strong>ng-change</strong>: Requires ng-model to be present along with it. Calls the event handler or evaluates the assigned expression when there is a change to value of the model&lt;/li&gt;</li>
+  <li><strong>ng-form</strong>: Works same as HTML form and allows nesting of forms&lt;/li&gt;</li>
+  <li><strong>ng-non-bindable</strong>: Prevents AngularJS from compiling or binding the contents of the current DOM element&lt;/li&gt;</li>
+  <li><strong>ng-repeat-start and ng-repeat-end</strong>: Repeats top-level attributes&lt;/li&gt;</li>
+  <li><strong>ng-include</strong>: Loads a partial view&lt;/li&gt;</li>
+  <li><strong>ng-init</strong>: Used to evaluate an expression in the current scope&lt;/li&gt;</li>
+  <li><strong>ng-switch</strong>: conditionally displays elements&lt;/li&gt;</li>
+  <li><strong>ng-cloak</strong>: to prevent Angular HTML to load before bindings are applied</li>
+</ul>
+</div>
+<h3 id="routes">Routes</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><code><span class="nx">myModule</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$routeProvider</span><span class="p">){</span>
+    <span class="nx">$routeProvider</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="dl">"</span><span class="s2">/home</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span><span class="na">templateUrl</span><span class="p">:</span><span class="dl">"</span><span class="s2">templates/home.html</span><span class="dl">"</span><span class="p">,</span>
+                                  <span class="na">controller</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HomeController</span><span class="dl">"</span><span class="p">}).</span><span class="nx">when</span><span class="p">(</span><span class="dl">"</span><span class="s2">/details/:id</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span><span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">templates/details.html</span><span class="dl">"</span><span class="p">,</span>                                       <span class="na">controller</span><span class="p">:</span><span class="dl">"</span><span class="s2">ListController</span><span class="dl">"</span><span class="p">})</span>
+                <span class="p">.</span><span class="nx">otherwise</span><span class="p">({</span><span class="na">redirectTo</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/home</span><span class="dl">"</span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<h3 id="register-services">Register Services</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Service</span><span class="p">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">service</span><span class="p">(</span> <span class="dl">'</span><span class="s1">serviceName</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">);</span>
+<span class="nl">Factory</span><span class="p">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span> <span class="dl">'</span><span class="s1">factoryName</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">);</span>
+<span class="nl">Provider</span><span class="p">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">provider</span><span class="p">(</span> <span class="dl">'</span><span class="s1">providerName</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="utility-functions">Utility Functions</h3>
+<ul>
+  <li>angular.copy - Creates a deep copy of source</li>
+  <li>angular.extend - Copy methods and properties from one object to another</li>
+  <li>angular.element - Wraps a raw DOM element or HTML string as a jQuery element</li>
+  <li>angular.equals - Determines if two objects or two values are equivalent</li>
+  <li>angular.forEach - Enumerate the content of a collection</li>
+  <li>angular.toJson - Serializes input into a JSON-formatted string</li>
+  <li>angular.fromJson - Deserializes a JSON string</li>
+  <li>angular.identity - Returns its first argument</li>
+  <li>angular.isArray - Determines if a reference is an Array</li>
+  <li>angular.isDate - Determines if a value is a date</li>
+  <li>angular.isDefined - Determines if a reference is defined</li>
+  <li>angular.isElement - Determines if a reference is a DOM element</li>
+  <li>angular.isFunction - Determines if a reference is a Function</li>
+  <li>angular.isNumber - Determines if a reference is a Number</li>
+  <li>angular.isObject - Determines if a reference is an Object</li>
+  <li>angular.isString - Determines if a reference is a String</li>
+  <li>angular.isUndefined - Determines if a reference is undefined</li>
+  <li>angular.lowercase - Converts the specified string to lowercase</li>
+  <li>angular.uppercase - Converts the specified string to uppercase</li>
+</ul>
+
+</div>
+//// sass
+<div class="page">
+  <h1 class="page-title">SASS</h1>
+  <h2 id="install">Install</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>sass
+</code></pre></div></div>
+<h2 id="variables">Variables</h2>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$font-stack</span><span class="p">:</span>    <span class="n">Helvetica</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$primary-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="m">100%</span> <span class="nv">$font-stack</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="nesting">Nesting</h2>
+<p>SCSS Syntax:</p>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">nav</span> <span class="p">{</span>
+  <span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">li</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">6px</span> <span class="m">12px</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>CSS:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">nav</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">6px</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="mixins">Mixins</h2>
+<p>SCSS Syntax:</p>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@mixin</span> <span class="nf">border-radius</span><span class="p">(</span><span class="nv">$radius</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">-webkit-border-radius</span><span class="p">:</span> <span class="nv">$radius</span><span class="p">;</span>
+     <span class="na">-moz-border-radius</span><span class="p">:</span> <span class="nv">$radius</span><span class="p">;</span>
+      <span class="na">-ms-border-radius</span><span class="p">:</span> <span class="nv">$radius</span><span class="p">;</span>
+          <span class="nl">border-radius</span><span class="p">:</span> <span class="nv">$radius</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span> <span class="p">{</span> <span class="k">@include</span> <span class="nd">border-radius</span><span class="p">(</span><span class="m">10px</span><span class="p">);</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>CSS:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">-webkit-border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">-moz-border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">-ms-border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="extendinheritance">Extend/Inheritance</h2>
+<p>SCSS Syntax:</p>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.message</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="mh">#ccc</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.success</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.message</span><span class="p">;</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.error</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.message</span><span class="p">;</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.warning</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nc">.message</span><span class="p">;</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>CSS:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.message</span><span class="o">,</span> <span class="nc">.success</span><span class="o">,</span> <span class="nc">.error</span><span class="o">,</span> <span class="nc">.warning</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#cccccc</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.success</span> <span class="p">{</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.error</span> <span class="p">{</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.warning</span> <span class="p">{</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="operators">Operators</h2>
+<p>SCSS Syntax:</p>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">"main"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span> <span class="o">/</span> <span class="m">960px</span> <span class="o">*</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">aside</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">"complimentary"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span> <span class="o">/</span> <span class="m">960px</span> <span class="o">*</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>CSS:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"main"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">62.5%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">aside</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"complimentary"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">31.25%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div></pre>
+//// restful apis
+<div class="page">
+  <h3 class="page-title">RESTful APIs</h3>
+  <h3 id="best-practices-in-designing-restful-apis">Best Practices in Designing RESTful APIs</h3>
+<h3 id="require-versioning-in-accepts-header">Require versioning in Accepts header</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept: application/vnd.heroku+json<span class="p">;</span> <span class="nv">version</span><span class="o">=</span>3
+</code></pre></div></div>
+<h3 id="accept-serialized-json-in-request-bodies">Accept serialized JSON in request bodies</h3>
+<p>Accept serialized JSON on <code class="language-plaintext highlighter-rouge">PUT</code>/<code class="language-plaintext highlighter-rouge">PATCH</code>/<code class="language-plaintext highlighter-rouge">POST</code> request bodies, either instead of or in addition to form-encoded data.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-X</span> POST https://service.com/apps <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">
+    "Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"name": "demoapp"}'</span>
+<span class="o">{</span>
+  <span class="s2">"id"</span>: <span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span>,
+  <span class="s2">"name"</span>: <span class="s2">"demoapp"</span>,
+  <span class="s2">"owner"</span>: <span class="o">{</span>
+    
+    <span class="s2">"email"</span>: <span class="s2">"username@example.com"</span>,
+    <span class="s2">"id"</span>: <span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span>
+  <span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div></div>
+<h3 id="use-consistent-path-formats">Use consistent path formats</h3>
+<h3 id="resource-names">Resource names</h3>
+<p>Use the plural version of a resource name unless the resource in question is a singleton within the system (for example, in most systems a given user would only ever have one account). This keeps it consistent in the way you refer to particular resources.</p>
+<h3 id="actions">Actions</h3>
+<p>Prefer endpoint layouts that don’t need any special actions for individual resources. In cases where special actions are needed, place them under a standard actions prefix, to clearly delineate them:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/resources/:resource/actions/:action
+</code></pre></div></div>
+<h3 id="downcase-paths-and-attributes">Downcase paths and attributes</h3>
+<ul>
+  <li>Use downcased and dash-separated path names, for alignment with hostnames.</li>
+  <li>Downcase attributes, but use underscore separators so that attribute names can be typed without quotes in JavaScript, e.g.:</li>
+</ul>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">service_class</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">first</span><span class="dl">"</span>
+</code></pre></div></div>
+<h3 id="support-non-id-dereferencing-for-convenience">Support non-id dereferencing for convenience</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl https://service.com/apps/<span class="o">{</span>app_id_or_name<span class="o">}</span>
+<span class="nv">$ </span>curl https://service.com/apps/97addcf0-c182
+<span class="nv">$ </span>curl https://service.com/apps/www-prod
+</code></pre></div></div>
+<h3 id="minimize-path-nesting">Minimize path nesting</h3>
+<p>Limit nesting depth by preferring to locate resources at the root path. Use nesting to indicate scoped collections</p>
+<h3 id="responses">Responses</h3>
+<h3 id="return-appropriate-status-codes">Return appropriate status codes</h3>
+<p>Refer to the <a href="HTTP response code spec">https://tools.ietf.org/html/rfc7231#section-6</a> for guidance on status codes for user error and server error cases.</p>
+<h3 id="provide-full-resources-where-available">Provide full resources where available</h3>
+<p>Provide the full resource representation (i.e. the object with all attributes) whenever possible in the response.</p>
+<h3 id="provide-resource-uuids">Provide resource (UU)IDs</h3>
+<p>Give each resource an id attribute by default. Render UUIDs in downcased 8-4-4-4-12 format, e.g.:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">01234567-89ab-cdef-0123-456789abcdef</span><span class="dl">"</span>
+</code></pre></div></div>
+<h3 id="provide-standard-timestamps">Provide standard timestamps</h3>
+<p>Provide created_at and updated_at timestamps for resources by default, e.g:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="c1">// ...</span>
+  <span class="dl">"</span><span class="s2">created_at</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2012-01-01T12:00:00Z</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">updated_at</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2012-01-01T13:00:00Z</span><span class="dl">"</span><span class="p">,</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="use-utc-times-formatted-in-iso8601">Use UTC times formatted in ISO8601</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">finished_at</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2012-01-01T12:00:00Z</span><span class="dl">"</span>
+</code></pre></div></div>
+<h3 id="nest-foreign-key-relations">Nest foreign key relations</h3>
+<p>Use:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">service-production</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">owner</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5d8201b0...</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Instead of:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">service-production</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">owner_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5d8201b0...</span><span class="dl">"</span><span class="p">,</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="generate-structured-errors">Generate structured errors</h3>
+<p>Generate consistent, structured response bodies on errors. Include a machine-readable error id, a human-readable error message, and optionally a url pointing the client to further information about the error and how to resolve it</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 429 Too Many Requests
+{
+  "id":      "rate_limit",
+  "message": "Account reached its API rate limit.",
+  "url":     "https://docs.service.com/rate-limits"
+}
+</code></pre></div></div>
+<h3 id="show-rate-limit-status">Show rate limit status</h3>
+<p>Rate limit requests from clients to protect the health of the service and maintain high service quality for other clients. You can use a <a href="token bucket algorithm">http://en.wikipedia.org/wiki/Token_bucket</a> to quantify request limits.</p>
+<h3 id="keep-json-minified-in-all-responses">Keep JSON minified in all responses</h3>
+<p>Extra whitespace adds needless response size to requests, and many clients for human consumption will automatically “prettify” JSON output. It is best to keep JSON responses minified.</p>
+<p>You may consider optionally providing a way for clients to retrieve more verbose response, either via a query parameter (e.g. <code class="language-plaintext highlighter-rouge">?pretty=true</code>) or via an Accept header param (e.g. <code class="language-plaintext highlighter-rouge">Accept: application/vnd.heroku+json; version=3; indent=4;</code>).</p>
+<h3 id="artifacts">Artifacts</h3>
+<ul>
+  <li>Provide a machine-readable schema to exactly specify your API. Use <a href="prmd">https://github.com/interagent/prmd</a> to manage your schema, and ensure it validates with prmd verify.</li>
+  <li>Provide human-readable docs</li>
+  <li>Provide executable examples</li>
+  <li>Describe stability - See the <a href="Heroku API compatibility policy">https://devcenter.heroku.com/articles/api-compatibility-policy</a> for a possible stability and change management approach.</li>
+</ul>
+<p>Reference:
+<a href="https://github.com/interagent/http-api-design">https://github.com/interagent/http-api-design</a></p>
+</div>
+//// react
+<div class="page">
+  <h3 class="page-title">React</h3>
+  <h3 id="react-on-es6">React on ES6+</h3>
+<ul>
+  <li><a href="https://babeljs.io/docs/learn-es2015/#classes">class definition syntax</a></li>
+  <li>Class methods are declared without a colon, <code class="language-plaintext highlighter-rouge">function</code> keyword, and comma</li>
+  <li>All of the lifecycle methods but one can be defined as you would expect when using the new <code class="language-plaintext highlighter-rouge">class</code> syntax. The <code class="language-plaintext highlighter-rouge">constructor</code> method now assumes role of <code class="language-plaintext highlighter-rouge">componentWillMount</code></li>
+</ul>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Photo</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">alt</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The ES5 way</span>
+<span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">handleDoubleTap</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="err">…</span> <span class="p">},</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="err">…</span> <span class="p">},</span>
+<span class="p">});</span>
+<span class="c1">// ES6 way</span>
+<span class="kd">class</span> <span class="nx">Photo</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">handleDoubleTap</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div></pre>
+<h3 id="lifecycle-methods">Lifecycle Methods</h3>
+<ul>
+  <li>Children get their <code class="language-plaintext highlighter-rouge">props</code> from their parent, but manage their own state.</li>
+  <li>Loose analogy: <code class="language-plaintext highlighter-rouge">props</code> are public properties; <code class="language-plaintext highlighter-rouge">state</code> are private properties.</li>
+  <li>Lifecycle methods fire top down before render, bottom up after render. For example, <code class="language-plaintext highlighter-rouge">componentWillMmount</code> will fire in a parent component before it fires in a child component. Once rendered, <code class="language-plaintext highlighter-rouge">componentDidMount</code> is fired on the lowest child component, and then up the chain.</li>
+</ul>
+<p>Various methods are executed at specific points in a component’s lifecycle:</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">componentWillMount</code> (in ES6+, this is now replaced by <code class="language-plaintext highlighter-rouge">constructor</code> method)</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentDidMount</code>
+    <ul>
+      <li>Invoked once, only on the client (not on the server), immediately after the initial rendering occurs.</li>
+      <li>At this point in the lifecycle, you can access any refs to your children (e.g., to access the underlying DOM representation).</li>
+      <li>The <code class="language-plaintext highlighter-rouge">componentDidMount()</code> method of child components is invoked before that of parent components.</li>
+      <li>f you want to integrate with other JavaScript frameworks, set timers using setTimeout or setInterval, or send AJAX requests, perform those operations in this method</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentWillReceiveProps</code>
+    <ul>
+      <li>Invoked when a component is receiving new props. This method is not called for the initial render.</li>
+      <li>Use this as an opportunity to react to a prop transition before <code class="language-plaintext highlighter-rouge">render()</code> is called by updating the state using <code class="language-plaintext highlighter-rouge">this.setState()</code>.</li>
+      <li>The old props can be accessed via this.props. Calling <code class="language-plaintext highlighter-rouge">this.setState()</code>within this function will not trigger an additional render.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">shouldComponentUpdate</code>
+    <ul>
+      <li>Invoked before rendering when new props or state are being received</li>
+      <li>This method is not called for the initial render or when <code class="language-plaintext highlighter-rouge">forceUpdate</code> is used.</li>
+      <li>Use this as an opportunity to return <code class="language-plaintext highlighter-rouge">false</code> when you’re certain that the transition to the new props and state will not require a component update.</li>
+      <li>By default, <code class="language-plaintext highlighter-rouge">shouldComponentUpdate</code> always returns true to prevent subtle bugs when state is mutated in place, but if you are careful to always treat state as immutable and to read only from <code class="language-plaintext highlighter-rouge">props</code> and <code class="language-plaintext highlighter-rouge">state</code> in <code class="language-plaintext highlighter-rouge">render()</code> then you can override <code class="language-plaintext highlighter-rouge">shouldComponentUpdate</code> with an implementation that compares the old props and state to their replacements.</li>
+      <li>If performance is a bottleneck, especially with dozens or hundreds of components, use <code class="language-plaintext highlighter-rouge">shouldComponentUpdate</code> to speed up your app.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentWillUpdate</code>
+    <ul>
+      <li>Invoked immediately before rendering when new props or state are being received. This method is not called for the initial render.</li>
+      <li>Use this as an opportunity to perform preparation before an update occurs.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentDidUpdate</code>
+    <ul>
+      <li>Invoked immediately after the component’s updates are flushed to the DOM. This method is not called for the initial render.</li>
+      <li>Use this as an opportunity to operate on the DOM when the component has been updated.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">componentWillUnmount</code>
+    <ul>
+      <li>Invoked immediately before a component is unmounted from the DOM.</li>
+      <li>Perform any necessary cleanup in this method, such as invalidating timers or cleaning up any DOM elements that were created in <code class="language-plaintext highlighter-rouge">componentDidMount</code>.</li>
+    </ul>
+  </li>
+</ol>
+<h3 id="basic-class">Basic Class</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Hello = React.createClass({
+  render: function() {
+    return (
+      <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">"class"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/div&gt;</span>
+    );
+  }
+});
+React.render(<span class="nt">&lt;Hello</span> <span class="nt">/&gt;</span>, document.getElementById('app'));
+</code></pre></div></div>
+<h3 id="initial-states">Initial States</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var GreetUser = React.createClass({
+  getInitialState: function(){
+    return {
+      username: '@karloespiritu'
+    }
+  },
+  render: function() {
+    return (
+      <span class="nt">&lt;div&gt;</span>
+        Hello {this.state.username}
+      <span class="nt">&lt;/div&gt;</span>
+    );
+  }
+});
+</code></pre></div></div>
+<h3 id="component-lifecycle">Component Lifecycle</h3>
+<p>Use this built-in functions inside a component class</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//triggered once before first render
+componentWillMount: function(){
+    // Calling setState here does not cause a re-render
+    console.log('This will mount in this component');
+},
+// Triggered once after the first render
+componentDidMount: function(){
+    // You have now access to this.getDOMNode()
+    alert('In Component Did Mount');
+},
+// Invoked whenever there is a prop change
+// Called before render
+componentWillReceiveProps: function(nextProps){
+    // Not called for the initial render
+    // Previous props can be accessed by this.props
+    // Calling setState here does not trigger an additional re-render
+    alert('In Component Will Receive Props');
+},
+// Called IMMEDIATELY before a component is unmounted
+componentWillUnmount: function(){
+render: function(){
+  return (
+    <span class="nt">&lt;div&gt;</span>
+      Hello, {this.state.name}
+    <span class="nt">&lt;/div&gt;</span>
+  )
+}
+</code></pre></div></div>
+<h3 id="lists">Lists</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var MyList = React.createClass({
+  render: function() {
+    var item = function(listItem) {
+      return <span class="nt">&lt;li&gt;</span>{listItem}<span class="nt">&lt;/li&gt;</span>;
+    };
+    return <span class="nt">&lt;ul&gt;</span>{this.props.items.map(item)}<span class="nt">&lt;/ul&gt;</span>;
+  }
+});
+</code></pre></div></div>
+<h3 id="reference">Reference</h3>
+<ul>
+  <li><a href="https://facebook.github.io/react/docs/component-specs.html">React Component Specs and Lifecycle</a></li>
+</ul>
+</div>
+//// sublime
+<pre>
+	SUBLIME_CHEATSHEET.html
+from: <a href="https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/sublime_text.md">awesome-cheatsheets</a>
+## Access every command with the command palette
+- `shift + cmd + P `: Command palette
+
+## Goto anything
+- `cmd + P `: Goto file
+- `ctrl + G `: Goto line
+- `cmd + P `: Fuzzy search
+- `cmd + R `: Goto symbol
+
+## Quick selections
+- `cmd + D `: Select word
+- `cmd + K, cmd + D `: Skip and add next
+- `cmd + U `: Undo quick select
+- `cmd + L `: Select line
+- `ctrl + cmd + G `: Select all in file
+- `shift + cmd + space `: Expand selection to scope
+- `shift + cmd + L `: Split into lines
+
+## Edit code
+- `cmd + J `: Join 2 lines
+- `cmd + shift + D `: Duplicate line
+- `cmd + shift + R `: Reindent
+- `cmd + shift + K `: Delete line
+- `ctrl + cmd + up/down `: Move line/selection up/down
+- `alt + cmd + V `: Paste from history
+- `shift + cmd + / `: Comment/uncomment line
+- `alt + backspace `: Delete word by word
+- `alt + fn + backspace `: Forward delete word by word
+- `cmd + shift + enter `: Insert line before
+- `cmd + enter `: Insert line after
+- `ctrl + k, ctrl + l ` : To Lowercase
+- `ctrl + k, ctrl + u ` : To Uppercase
+
+## Searching
+- `cmd + F `: Search in file
+- `shift + cmd + F `: Search in all files
+- `&lt;open files> `: where filter
+
+## Miscelaneous
+- `alt + cmd + right/left `: Switch open tab
+- `ctrl + ]`: Indent selection
+- `ctrl + [ `: Unindent selection
+- `alt + - `: Go to previous cursor position
+- `alt + shift + - `: Go to next previous cursor position
+- `ctrl + b `: Build and execute file
+
+## sublime Must have packages
+`A file icon, BracketHighlighter, Color Highlighter, Comment-Snippets, 
+DevDocs, EditorConfig, Emmet, File Rename, Git, Git blame, GitGutter, 
+HTML-CSS-JS Prettify, JavaScript Completions, JavaScript Patterns, 
+JavaScript Snippets, LESS, Nodejs, Package Control, Pretty JSON, 
+SideBarEnhancements, SublimeLinter, SublimeLinter-contrib-eslint, 
+Terminal, Termius, auto save`
+
+## Preferences
+```javascript
+{
+"color_scheme": "Packages/User/Color Highlighter/themes/Boxy Ocean.tmTheme",
+"detect_indentation": false,
+"folder_exclude_patterns":
+[
+"node_modules",
+".svn",
+".git",
+".meteor/local"
+],
+"ignored_packages":
+[
+"Vintage"
+],
+"show_definitions": true,
+"theme": "Adaptive.sublime-theme"
+}
+```
+## Keymap
+```javascript
+[
+{ "keys": ["super+v"], "command": "paste_and_indent" },
+{ "keys": ["super+shift+v"], "command": "paste" },
+{ "keys": ["super+shift+r"], "command": "reindent" },
+{ "keys": ["super+h"], "command": "dev_docs_search_selection" }
+]
+```
+## Syncing settings with iCloud
+- `cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+- `mkdir -p ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/WebDev/ST3/Plugins`
+- `mv User ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/WebDev/ST3/Plugins`
+- `ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/WebDev/ST3/Plugins/User`
+
+## Restore settings from iCloud
+- `cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+- `rm -rf User`
+- `ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/WebDev/ST3/Plugins/User`
+</pre>
+</pre>
+</body>
+<script>
+// onb4unload & ClickAll
+window.onbeforeunload = function() {
+  return "Are you sure you want to leave this page? Your changes might not be saved.";
+};
+
+  // <button  onclick="Clickall()"  id="but1">all &#9658; </button> </br>   
+ function Clickall(){
+    var taggs = document.querySelectorAll("Summary"); 
+  // console.log(taggs+" clicked");
+  taggs.forEach(clicker) ;
+
+ function clicker( clickWhat){
+ clickWhat.click();
+ }};
+
+</script>
+<script> 
+  //  storgo script
+//let toggle = function(){
+let note_toggle = document.querySelector('#notesw');
+let fixy = document.querySelector('#fixy');
+note_toggle.addEventListener('click', () => {
+  if (fixy.style.display == "none"){
+  fixy.style.display = "inline-block";
+  fixy.style.width = '50%';
+  } else {fixy.style.display = "none";
+      fixy.style.width = '1px';
+  }
+});
+note_toggle.click();   // ?? or else it needs two clicks before it does anything
+// }
+// toggle();
+let storit = function() {
+  if(localStorage.getItem('storg0')) {
+    document.querySelector('#content').innerHTML = localStorage.getItem('storg0');
+  }
+}
+
+let editBtn = document.querySelector('#edit_content');
+let content = document.querySelector('#content');
+
+editBtn.addEventListener('click', () => {
+  content.contentEditable = !content.isContentEditable;
+  if(content.contentEditable === 'false') {
+    localStorage.setItem('storg0', content.innerHTML);
+  }
+  content.contentEditable = 'true';
+});
+storit();
+
+
+</script>

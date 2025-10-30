@@ -1,0 +1,48 @@
+0 verbose cli /home/jeff/.config/nvm/versions/node/v22.21.0/bin/node /home/jeff/.config/nvm/versions/node/v22.21.0/bin/npm
+1 info using npm@10.9.4
+2 info using node@v22.21.0
+3 silly config load:file:/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/jeff/Desktop/10_25/org_index/.npmrc
+5 silly config load:file:/home/jeff/.npmrc
+6 silly config load:file:/home/jeff/.config/nvm/versions/node/v22.21.0/etc/npmrc
+7 verbose title npm install stylelint-config-standard
+8 verbose argv "install" "stylelint-config-standard"
+9 verbose logfile logs-max:10 dir:/home/jeff/.npm/_logs/2025-10-26T04_33_13_764Z-
+10 verbose logfile /home/jeff/.npm/_logs/2025-10-26T04_33_13_764Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 silly idealTree buildDeps
+15 silly fetch manifest stylelint-config-standard@*
+16 silly packumentCache full:https://registry.npmjs.org/stylelint-config-standard cache-miss
+17 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+18 http fetch GET 200 https://registry.npmjs.org/stylelint-config-standard 393ms (cache miss)
+19 silly packumentCache full:https://registry.npmjs.org/stylelint-config-standard set size:undefined disposed:false
+20 silly fetch manifest stylelint@^16.23.0
+21 silly packumentCache full:https://registry.npmjs.org/stylelint cache-miss
+22 http fetch GET 200 https://registry.npmjs.org/stylelint 94ms (cache revalidated)
+23 silly packumentCache full:https://registry.npmjs.org/stylelint set size:1233499 disposed:false
+24 verbose stack Error: Invalid package name "html-eslint@" of package "html-eslint@@7.34.2": name can only contain URL-friendly characters.
+24 verbose stack     at invalidPackageName (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/npm-package-arg/lib/npa.js:136:15)
+24 verbose stack     at Result.setName (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/npm-package-arg/lib/npa.js:184:13)
+24 verbose stack     at new Result (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/npm-package-arg/lib/npa.js:172:12)
+24 verbose stack     at Function.resolve (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/npm-package-arg/lib/npa.js:82:15)
+24 verbose stack     at #nodeFromEdge (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1039:22)
+24 verbose stack     at #buildDepStep (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:904:35)
+24 verbose stack     at async Arborist.buildIdealTree (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:181:7)
+24 verbose stack     at async Promise.all (index 1)
+24 verbose stack     at async Arborist.reify (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:131:5)
+24 verbose stack     at async Install.exec (/home/jeff/.config/nvm/versions/node/v22.21.0/lib/node_modules/npm/lib/commands/install.js:150:5)
+25 error code EINVALIDPACKAGENAME
+26 error Invalid package name "html-eslint@" of package "html-eslint@@7.34.2": name can only contain URL-friendly characters.
+27 silly unfinished npm timer reify 1761453194132
+28 silly unfinished npm timer reify:loadTrees 1761453194133
+29 silly unfinished npm timer idealTree:buildDeps 1761453194239
+30 silly unfinished npm timer idealTree:#root 1761453194240
+31 verbose cwd /home/jeff/Desktop/10_25/org_index
+32 verbose os Linux 6.8.0-85-generic
+33 verbose node v22.21.0
+34 verbose npm  v10.9.4
+35 verbose exit 1
+36 verbose code 1
+37 error A complete log of this run can be found in: /home/jeff/.npm/_logs/2025-10-26T04_33_13_764Z-debug-0.log

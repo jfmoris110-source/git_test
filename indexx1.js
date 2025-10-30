@@ -1,4 +1,5 @@
   // local storage 
+//  
 //let toggle = function(){
 let note_toggle = document.querySelector('#notesw');
 let fixy = document.querySelector('#fixy');
