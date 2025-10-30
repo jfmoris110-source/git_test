@@ -1,39 +1,54 @@
- #notesw{   position: fixed;   right: 0px;   top: 0px; }
- #fixy{   position: fixed;  right: 10%;  top: 0px;
+#notesw {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+}
+#fixy {
+	position: fixed;
+	right: 10%;
+	top: 0px;
 
-      background-color: white; opacity: 1;
-      }
-  #content{   height: 500pX;
-       border: 2px solid black;
-   overflow: auto;  color:black;  }
-  #edit_content{   position: fixed;   right: 0px;   top: 23px;   width: 6%;  }
+	background-color: white;
+	opacity: 1;
+}
+#content {
+	height: 500px;
+	border: 2px solid black;
+	overflow: auto;
+	color: black;
+}
+#edit_content {
+	position: fixed;
+	right: 0px;
+	top: 23px;
+	width: 6%;
+}
 
 .row {
-  overflow: auto;
-    top: 241px;
-  display: flex;
-  border:1px solid black;
-    margin: 0px;
-    padding: 0px;
+	overflow: auto;
+	top: 241px;
+	display: flex;
+	border: 1px solid black;
+	margin: 0px;
+	padding: 0px;
 }
-ul{
-margin:0px;
+ul {
+	margin: 0px;
 }
 .column {
-  
-  overflow: auto;
-  flex: 50%;
-  width: 33%;
-    margin: 0px;
-    padding: 0px;
-    border:1px solid black;
+	overflow: auto;
+	flex: 50%;
+	width: 33%;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid black;
 }
- pre{
-    margin: 0px;
-    padding: 0px;
-  }
-  h3{
-    display: inline-block;
-    margin: 0px;
-    padding: 0px;
-  }
+pre {
+	margin: 0px;
+	padding: 0px;
+}
+h3 {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}

@@ -26,7 +26,7 @@ function yarn_biom() {
 	for file in "$@"; do
 		 read -p "loop  $file"
     echo "//// $file"    # "./1lints"
-    yarn biome check "$file" format #2>&1 | tee >> "./1lints"
+    yarn biome check --write "$file" #2>&1 | tee >> "./1lints"
 done
     echo "yarn dlx biome fix !!?"
 }
