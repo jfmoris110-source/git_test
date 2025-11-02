@@ -131,6 +131,53 @@ yarn precommit:seq
     </code></pre>
   </section>
 
+  <section id="gitpush">
+  <h2>Pushing this project to GitHub</h2>
+    <p>Quick steps to create a GitHub repository and push this project. Pick the method you prefer.</p>
+
+    <h3>Preferred: use the GitHub CLI (<code>gh</code>)</h3>
+    <p>If you have <code>gh</code> installed and authenticated, this creates the repo on GitHub and pushes your current branch:</p>
+    <pre><code># create a repo (interactive or non-interactive)
+gh repo create my-org_or_user/my-repo --public --source=. --remote=origin --push
+
+# or interactive:
+gh repo create --public
+    </code></pre>
+
+    <h3>Manual (git + GitHub web)</h3>
+    <p>If you prefer the web UI, create a new repository on GitHub, then run these locally (replace <code>USER</code> and <code>REPO</code>):</p>
+    <pre><code># set the main branch name (recommended)
+git branch -M main
+
+# add remote (SSH format shown; use HTTPS URL if you prefer)
+git remote add origin git@github.com:USER/REPO.git
+
+# stage and commit your files (if you haven't yet)
+git add .
+git commit -m "chore: initial commit"
+
+# push and set upstream
+git push -u origin main
+    </code></pre>
+
+    <h3>If the remote already has commits</h3>
+    <pre><code># fetch remote and rebase / merge first to avoid unrelated histories
+git fetch origin
+git rebase origin/main   # or: git merge origin/main
+
+# then push
+git push -u origin main
+    </code></pre>
+
+    <h3>Useful extras</h3>
+    <ul>
+      <li>Push tags: <code>git tag v1.0 && git push --tags</code></li>
+      <li>Push all branches: <code>git push --all</code></li>
+      <li>If you must force (careful): <code>git push --force-with-lease</code> — prefer this over plain --force.</li>
+      <li>We've already added a <code>.gitignore</code> to avoid committing node_modules and common temp files.</li>
+    </ul>
+  </section>
+
   <section id="ci">
     <h2>CI example (GitHub Actions)</h2>
     <p>Minimal GitHub Actions workflow to run format/lint/test on PRs and pushes.</p>
