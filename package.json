@@ -26,10 +26,11 @@
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "2.3.1",
-    "vite": "^7.1.12",
+    "htmlhint": "^0.16.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
-    "stylelint": "^15.0.0",
-    "htmlhint": "^0.16.0"
+    "stylelint": "^16.23.0",
+    "stylelint-config-standard": "^39.0.1",
+    "vite": "^7.1.12"
   }
 }

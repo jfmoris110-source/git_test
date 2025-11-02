@@ -5,14 +5,15 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	display: inline;
 }
 
 .highlight .hll {
 	background-color: #ffc;
 }
+
 .highlight .c {
 	color: #999;
 } /* Comment */
@@ -61,8 +62,9 @@ h6 {
 } /* Generic.Output */
 .highlight .gp {
 	color: #009;
-} /* Generic.Prompt */
+} /* Generic.Prompt j added color below, ai sez */
 .highlight .gs {
+	color: #009;
 } /* Generic.Strong */
 .highlight .gu {
 	color: #030;
