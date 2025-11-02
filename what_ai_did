@@ -1,0 +1,20 @@
+Short summary — what_ai_did
+
+Date: 2025-11-02
+
+I created a detailed HTML record at `what_ai_did.html` that documents all changes made to add a Yarn + Biome workflow, Husky hooks, and granular lint-staged rules. See `what_ai_did.html` for the full log.
+
+Key edits (short):
+- Updated `package.json` scripts and added devDependencies for `husky`, `lint-staged`, `stylelint`, and `htmlhint`.
+- Added `.husky/pre-commit` and updated it to be Husky v10-compatible.
+- Made lint-staged rules per-file-type (JS/TS/JSON/MD -> Biome, CSS -> stylelint, HTML -> htmlhint).
+- Merged the temporary `WORKFLOW.md` content into `README.md` under "Developer workflow".
+
+Run these to finish locally:
+  yarn install
+  yarn prepare
+  git add README.md package.json .husky what_ai_did what_ai_did.html
+  git commit -m "Add yarn/biome workflow, husky hooks, and lint-staged rules"
+
+End of summary.
+		<h1>What AI Did</h1>

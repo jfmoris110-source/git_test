@@ -379,3 +379,35 @@ See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 ## License (MIT)
 
 See [`LICENSE.md`](./LICENSE.md).
+\n\n## Developer workflow
+
+Overview
+- This repo uses Biome as the canonical linter/formatter.
+- Pre-commit hooks (Husky) run `lint-staged` which applies Biome to staged files.
+
+Quick start
+1. Install dependencies:
+
+```bash
+yarn install
+```
+
+2. Activate Husky hooks (runs the `prepare` script):
+
+```bash
+yarn prepare
+```
+
+3. Typical commands
+- `yarn lint` — run Biome check
+- `yarn format` — run Biome and modify files (`--write`)
+- `yarn start` — start Vite dev server
+- `yarn build` — build with Vite
+
+Pre-commit behavior
+- The pre-commit hook executes `yarn lint-staged` (see `.husky/pre-commit`).
+- `lint-staged` is configured to run `yarn biome check --write` on staged files matching `*.{js,ts,json,css,html,md}` so formatting/fixes are applied before commit.
+
+Notes and troubleshooting
+- If pre-commit hooks don't run after `yarn prepare`, ensure `node_modules/.bin/husky` exists or run `npx husky install`.
+- To run the hook locally without committing: `sh .husky/pre-commit` (or `yarn lint-staged`).

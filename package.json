@@ -4,7 +4,18 @@
   "description": "multi category note dump",
   "main": "indexx1.js",
   "scripts": {
+    "prepare": "husky install",
+    "start": "vite",
+    "build": "vite build",
+    "lint": "yarn biome check",
+    "format": "yarn biome check --write",
     "test": "jest"
+  },
+  "lint-staged": {
+  "*.js": "yarn biome check --write",
+  "*.ts": "yarn biome check --write",
+    "*.css": "stylelint --fix",
+    "*.html": "htmlhint"
   },
   "keywords": [
     "array"
@@ -13,6 +24,10 @@
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "2.3.1",
-    "vite": "^7.1.12"
+    "vite": "^7.1.12",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "stylelint": "^15.0.0",
+    "htmlhint": "^0.16.0"
   }
 }

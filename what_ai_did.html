@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>What AI Did — org_index</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height:1.5; padding:24px; color:#111 }
+    header { border-bottom:1px solid #ddd; margin-bottom:18px }
+    nav ul { list-style:none; padding:0; display:flex; gap:12px; flex-wrap:wrap }
+    nav a { color:#0366d6; text-decoration:none }
+    section { margin-top:20px }
+    pre { background:#f6f8fa; padding:12px; overflow:auto }
+    code { background:#f1f1f1; padding:2px 4px; border-radius:3px }
+    .muted { color:#666; font-size:0.95em }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>What AI Did</h1>
+    <p class="muted">Repository: <code>org_index</code> — Generated: 2025-11-02</p>
+    <nav>
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#files">Files changed</a></li>
+        <li><a href="#commands">Commands run</a></li>
+        <li><a href="#husky">Husky updates</a></li>
+        <li><a href="#lintstaged">lint-staged changes</a></li>
+        <li><a href="#readme">README merge</a></li>
+        <li><a href="#validation">Validation</a></li>
+        <li><a href="#next">Next steps</a></li>
+        <li><a href="#assumptions">Assumptions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>This document records the automated changes I made to add a Yarn + Biome workflow and developer tooling, plus the interactive actions taken during the session.</p>
+    <ul>
+      <li>Added granular <code>lint-staged</code> rules and installed <code>stylelint</code> and <code>htmlhint</code>.</li>
+      <li>Added Husky pre-commit hook to run <code>lint-staged</code>, and updated it to a v10-compatible format.</li>
+      <li>Extended <code>package.json</code> with scripts: <code>prepare</code>, <code>start</code>, <code>build</code>, <code>lint</code>, <code>format</code>.</li>
+      <li>Merged a workflow doc into <code>README.md</code>.</li>
+      <li>Created this record and converted it to an HTML page with an index (this file).</li>
+    </ul>
+  </section>
+
+  <section id="files">
+    <h2>Files changed / added</h2>
+    <ul>
+      <li><strong>Updated</strong>: <code>package.json</code>
+        <ul>
+          <li>Added scripts: <code>prepare</code>, <code>start</code>, <code>build</code>, <code>lint</code>, <code>format</code> (kept <code>test</code>).</li>
+          <li>Moved from single lint-staged entry to per-file pattern commands.</li>
+          <li>Added devDependencies: <code>husky</code>, <code>lint-staged</code>, <code>stylelint</code>, <code>htmlhint</code>.</li>
+        </ul>
+      </li>
+      <li><strong>Added</strong>: <code>.husky/pre-commit</code> — runs <code>yarn lint-staged</code>.</li>
+      <li><strong>Added</strong>: <code>WORKFLOW.md</code> (later merged into README and removed).</li>
+      <li><strong>Updated</strong>: <code>README.md</code> — added a <em>Developer workflow</em> section.
+      </li>
+      <li><strong>Added</strong>: <code>what_ai_did</code> — original plaintext summary (now replaced) and <code>what_ai_did.html</code> (this file)</li>
+    </ul>
+  </section>
+
+  <section id="commands">
+    <h2>Commands run (selected)</h2>
+    <p>Examples of commands I executed for validation and wiring:</p>
+    <pre><code>yarn -v
+node -e "console.log(Object.keys(require('./package.json').scripts).join(', '))"
+yarn install
+yarn prepare
+sh .husky/pre-commit
+git status --porcelain -b
+</code></pre>
+    <p class="muted">Note: Some commands were run multiple times during iteration (install, prepare, pre-commit).</p>
+  </section>
+
+  <section id="husky">
+    <h2>Husky changes</h2>
+    <p>Husky hook originally included sourcing of <code>_ /husky.sh</code> which is deprecated in Husky v10. I updated the hook to be compatible by removing the deprecated lines and leaving a simple shell script that runs <code>yarn lint-staged</code>.</p>
+    <pre><code>#!/bin/sh
+# Husky v10-compatible hook
+yarn lint-staged
+</code></pre>
+    <p>That makes the hook resilient to Husky v10's requirement not to source <code>husky.sh</code>. The hook was executed and produced the expected outcome (no staged files found).</p>
+  </section>
+
+  <section id="lintstaged">
+    <h2>lint-staged configuration</h2>
+    <p>I replaced the single generic lint-staged entry with per-pattern commands so each file type runs the most appropriate tool:</p>
+    <pre><code>"lint-staged": {
+  "*.js": "yarn biome check --write",
+  "*.ts": "yarn biome check --write",
+  "*.json": "yarn biome check --write",
+  "*.md": "yarn biome check --write",
+  "*.css": "stylelint --fix",
+  "*.html": "htmlhint"
+}
+</code></pre>
+    <p>Notes:</p>
+    <ul>
+      <li><code>biome</code> is used for JS/TS/JSON/MD formatting and fixes.</li>
+      <li><code>stylelint --fix</code> attempts to auto-fix CSS issues.</li>
+      <li><code>htmlhint</code> lints HTML but doesn't auto-fix; you can replace it with <code>prettier --write</code> if you prefer auto-fix.</li>
+    </ul>
+  </section>
+
+  <section id="readme">
+    <h2>README merge</h2>
+    <p>I merged the content of the temporary <code>WORKFLOW.md</code> into <code>README.md</code> under a "Developer workflow" section and then removed <code>WORKFLOW.md</code>.</p>
+  </section>
+
+  <section id="validation">
+  <h2>Validation &amp; results</h2>
+    <ul>
+      <li><strong>Yarn present:</strong> <code>yarn -v</code> returned <code>1.22.22</code> in the environment used.</li>
+      <li><strong>package.json scripts:</strong> parsed and confirmed keys present: <code>prepare, start, build, lint, format, test</code>.</li>
+      <li><strong>Husky hooks:</strong> <code>yarn prepare</code> ran and the pre-commit hook executed without the v10 deprecation message after update.</li>
+      <li><strong>lint-staged:</strong> Ran but reported "could not find any staged files" which is expected when no files are staged.</li>
+      <li><strong>Dependencies:</strong> Installed <code>stylelint</code> and <code>htmlhint</code>; some transitive warnings appeared but did not block installation.</li>
+    </ul>
+  </section>
+
+  <section id="next">
+  <h2>Next steps &amp; suggestions</h2>
+    <ul>
+      <li>Commit the changes: <code>git add README.md package.json .husky what_ai_did && git commit -m "Add yarn/biome workflow and hooks"</code></li>
+      <li>Test pre-commit behavior by editing a file, staging it, and committing to see lint-staged auto-fix run.</li>
+      <li>Consider replacing <code>htmlhint</code> with <code>prettier --write</code> for auto-formatting HTML, or add an HTML formatter if you want fixes applied automatically.</li>
+      <li>Optionally upgrade <code>husky</code> to v10 and run <code>yarn install</code> to use the latest hooks; current hook style is already compatible with v10.</li>
+      <li>If you want stricter JS rule checking, add ESLint and have lint-staged run <code>eslint --fix</code> in addition to (or instead of) Biome.</li>
+    </ul>
+  </section>
+
+  <section id="assumptions">
+    <h2>Assumptions</h2>
+    <ul>
+      <li>Option A (minimal) was requested and Biome was to remain the canonical formatter/linter.</li>
+      <li>Other package.json files (<code>package1.json</code>, <code>package2.json</code>) were left untouched as requested.</li>
+    </ul>
+  </section>
+
+  <footer style="margin-top:28px; border-top:1px solid #eee; padding-top:12px; color:#666; font-size:0.95em">
+    <p>Generated by automation session on 2025-11-02. For questions or follow-ups, request improvements in the repo.</p>
+  </footer>
+</body>
+</html>
