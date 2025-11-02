@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Git — Why/How (summary)</title>
+  <style>body{font-family:Inter,Arial,sans-serif;padding:20px;color:#111}pre{background:#f6f8fa;padding:12px;overflow:auto}code{background:#f1f1f1;padding:2px 6px;border-radius:4px}</style>
+</head>
+<body>
+  <h1>GitHub setup — concise record</h1>
+  <p>Generated: 2025-11-02</p>
+
+  <h2>Goal</h2>
+  <p>Push this local repo to GitHub with SSH authentication and keep a compact, indexed record for later study.</p>
+
+  <h2>Steps performed</h2>
+  <ol>
+    <li>Generated an ED25519 keypair locally:
+      <pre><code>ssh-keygen -t ed25519 -C "jfmoris110@gmail.com"</code></pre>
+    </li>
+    <li>Copied the public key (example):
+      <pre><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjDDdp84S62hK... jfmoris110@gmail.com</code></pre>
+      and pasted it into GitHub → Settings → SSH and GPG keys → New SSH key.
+    </li>
+    <li>Started ssh-agent and loaded the private key:
+      <pre><code>eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519</code></pre>
+    </li>
+    <li>Validated SSH auth:
+      <pre><code>ssh -T git@github.com
+# expected: Hi &lt;account&gt;! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+    </li>
+    <li>Set remote to SSH and pushed:
+      <pre><code>git remote set-url origin git@github.com:jfmoris110-source/git_test.git
+git push -u origin main</code></pre>
+    </li>
+  </ol>
+
+  <h2>Notes &amp; alternatives</h2>
+  <ul>
+    <li>HTTPS no longer accepts password authentication; use a PAT if you must use HTTPS.</li>
+    <li>The GitHub CLI (<code>gh</code>) can create repos and push in one step: <code>gh repo create ... --source=. --push</code>.</li>
+    <li>Procedures and commands are recorded in files in this repo (e.g. <code>whyl_yarn.html</code>, <code>git_whyl.html</code>) so they can be indexed and studied later.</li>
+  </ul>
+
+  <footer style="margin-top:18px;color:#666">End of git_whyl (short log)</footer>
+</body>
+</html>
+git_whyl.html
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjDDdp84S62hKNJ6HWle7ArTv2nTwdKNNnbDFl8Cns2 jfmoris110@gmail.com
+
+https://github.com/new
+https://github.com/jfmoris110-source/git_test

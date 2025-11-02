@@ -1,3 +1,22 @@
+# org_index
+
+Small personal project containing notes and workflow helpers.
+
+Quick links:
+- `tips.html` — local cheatsheet for Yarn + Biome + Husky workflow.
+- `whyl_yarn.html` — detailed summary of problems encountered and fixes.
+- `git_whyl.html` — (new) concise record of Git/GitHub setup steps for this repo.
+
+How to get started locally:
+
+```bash
+yarn install
+yarn prepare   # install husky hooks
+yarn format    # apply biome formatting
+yarn lint      # run biome checks
+```
+
+To push this repo to GitHub, see `git_whyl.html` for an indexed record of the SSH setup and push commands.
 # <img src="./icon.svg" height="25" /> corepack
 
 [![Join us on OpenJS slack (channel #nodejs-corepack)](https://img.shields.io/badge/OpenJS%20Slack-%23nodejs--corepack-blue)](https://slack-invite.openjsf.org/)
