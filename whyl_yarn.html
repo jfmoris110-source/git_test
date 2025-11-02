@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Why/How — Yarn workflow fixes (summary)</title>
+  <style>body{font-family:Inter,Arial,sans-serif;padding:20px;color:#111}pre{background:#f6f8fa;padding:12px;overflow:auto}code{background:#f1f1f1;padding:2px 6px;border-radius:4px}</style>
+</head>
+<body>
+  <h1>Quick summary — issues encountered &amp; commands used</h1>
+  <p>Generated: 2025-11-02</p>
+
+  <h2>Problems</h2>
+  <ul>
+    <li>Pre-commit hooks were failing: parallel linting caused Biome processes to be SIGKILLed on this environment.</li>
+    <li>HTML linting (htmlhint) failed on unescaped ampersands in generated HTML.</li>
+    <li>lint-staged parallel config didn't behave as expected for concurrency control.</li>
+    <li>Stylelint config required a newer Stylelint (peer dependency mismatch), causing unknown-rule errors.</li>
+    <li>Leftover npm debug log file and some temp artifacts were present in the repo.</li>
+  </ul>
+
+  <h2>What I changed / fixes applied</h2>
+  <ol>
+    <li>Created a sequential pre-commit runner to avoid parallel resource contention: <code>scripts/precommit-seq.js</code> — runs Biome (JS/TS) with <code>--unsafe</code>, then stylelint <code>--fix</code>, then htmlhint. This prevents simultaneous Biome processes from being killed.</li>
+    <li>Escaped ampersands in HTML files (e.g., <code>tips.html</code> and <code>what_ai_did.html</code>) to satisfy <code>htmlhint</code>.</li>
+    <li>Relaxed heavy checks from lint-staged and moved strict JSON/MD Biome checks to CI. Added a GitHub Actions workflow that runs a strict format-diff step so CI fails when formatting differs.</li>
+    <li>Added <code>.gitignore</code> and removed the leftover npm debug log file.</li>
+    <li>Upgraded <code>stylelint</code> to 16.x and installed <code>stylelint-config-standard</code>; fixed <code>astd_cheats.css</code> so stylelint runs in pre-commit without errors.</li>
+    <li>Added a developer cheatsheet <code>tips.html</code> and a detailed activity log <code>what_ai_did.html</code>.</li>
+  </ol>
+
+  <h2>Key commands used (local)</h2>
+  <pre><code># install dependencies and husky hooks
+yarn install
+yarn prepare
+
+# run formatter / linter
+yarn format         # biome --write
+yarn lint           # biome check
+
+# run sequential pre-commit runner (no commit)
+yarn precommit:seq
+
+# upgrade stylelint and install config
+yarn add -D stylelint@^16.23.0 stylelint-config-standard
+
+# commit changes (hooks run automatically)
+git add .
+git commit -m "chore: ..."
+</code></pre>
+
+  <h2>CI (what I added)</h2>
+  <p>CI runs strict formatting checks and fails when <code>yarn format</code> would change files. Key snippet:</p>
+  <pre><code># in .github/workflows/ci.yml
+yarn install --frozen-lockfile
+yarn format
+if git diff --quiet; then echo OK; else echo "formatting changed files"; exit 1; fi
+yarn lint
+yarn test
+</code></pre>
+
+  <h2>Next steps / push</h2>
+  <p>The repository currently has no remote configured on this machine; to push to GitHub you can either:</p>
+  <ol>
+    <li>Create the GitHub repo in the web UI and run the git push commands from <code>tips.html</code>.</li>
+    <li>Install the GitHub CLI (<code>gh</code>) and run:
+      <pre><code>gh repo create YOUR_USERNAME/REPO_NAME --public --source=. --remote=origin --push
+</code></pre>
+    </li>
+    <li>Or provide the remote URL and run:
+      <pre><code>git remote add origin git@github.com:USER/REPO.git
+git push -u origin master
+</code></pre>
+    </li>
+  </ol>
+
+  <footer style="margin-top:18px;color:#666">End of summary</footer>
+</body>
+</html>
