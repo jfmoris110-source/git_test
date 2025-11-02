@@ -9,11 +9,13 @@
     "build": "vite build",
     "lint": "yarn biome check",
     "format": "yarn biome check --write",
+    "precommit:seq": "node ./scripts/precommit-seq.js",
     "test": "jest"
   },
   "lint-staged": {
-  "*.js": "yarn biome check --write",
-  "*.ts": "yarn biome check --write",
+    "concurrent": false,
+    "*.js": "yarn biome check --write",
+    "*.ts": "yarn biome check --write",
     "*.css": "stylelint --fix",
     "*.html": "htmlhint"
   },

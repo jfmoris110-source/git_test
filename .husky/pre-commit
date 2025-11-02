@@ -1,4 +1,3 @@
 #!/bin/sh
-# Husky v10-compatible hook: avoid sourcing husky.sh
-# Run lint-staged directly on staged files
-yarn lint-staged
+# Run sequential pre-commit checks to avoid parallel resource spikes
+yarn precommit:seq
