@@ -1,0 +1,27 @@
+# Node
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+
+# Editor directories
+.idea/
+.vscode/
+
+# Swap / backup files
+*~
+*.swp
+*.swo
+
+# Yarn integrity
+.yarn-integrity
+
+# Build output
+dist/
+build/

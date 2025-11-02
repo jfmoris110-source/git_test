@@ -1,0 +1,37 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Enable corepack
+        run: corepack enable
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Format check (format-diff)
+        # Run the project's formatter (Biome) in write mode, then fail if
+        # formatting changed any files. This makes CI strict: it fails when
+        # formatting is required instead of auto-applying fixes.
+        run: |
+          yarn format
+          # if git shows differences after formatting, fail with a helpful message
+          if ! git diff --quiet; then
+            echo "\nERROR: Formatting changes required. Run 'yarn format' locally and commit the result.\n"
+            git --no-pager diff --name-only
+            exit 1
+          fi
+      - name: Biome JSON/MD checks
+        run: yarn biome check "**/*.{json,md}"
+      - name: Lint (full)
+        run: yarn lint
+      # Note: we intentionally do NOT run the local precommit runner here because
+      # it auto-applies fixes. Running auto-fixers before checking would hide
+      # formatting issues. Keep the CI strict: fail when formatting/linting fail.
+      - name: Test
+        run: yarn test
