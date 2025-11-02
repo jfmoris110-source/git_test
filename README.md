@@ -7,6 +7,13 @@ Quick links:
 - `whyl_yarn.html` — detailed summary of problems encountered and fixes.
 - `git_whyl.html` — (new) concise record of Git/GitHub setup steps for this repo.
 
+Documentation & logs
+--------------------
+
+- CI status: ![CI](https://github.com/jfmoris110-source/git_test/actions/workflows/ci.yml/badge.svg)
+- `whyl_yarn.html` — detailed why/how log for the YAML/workflow & tooling fixes.
+- `git_whyl.html` — short, indexed record of the GitHub SSH setup and push steps.
+
 How to get started locally:
 
 ```bash
